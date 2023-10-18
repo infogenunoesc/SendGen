@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "Va9pOuXjce9ZGdU4iqTn/csbBmgEwefuiTmYUO98fjA=",
+  "Hash": "rXx0SHmfThCMJykPW3/vU3/LYXhllUTm0gpgFhHmDfc=",
   "Source": "SendGen.Web",
   "BasePath": "_content/SendGen.Web",
   "Mode": "Default",
@@ -1103,6 +1103,23 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot/favicon.ico"
+    },
+    {
+      "Identity": "/home/neco/MEGA/Ionar/Brisa/SendGen/SendGen.Web/wwwroot/images/SendGen-logo-30.png",
+      "SourceId": "SendGen.Web",
+      "SourceType": "Discovered",
+      "ContentRoot": "/home/neco/MEGA/Ionar/Brisa/SendGen/SendGen.Web/wwwroot/",
+      "BasePath": "_content/SendGen.Web",
+      "RelativePath": "images/SendGen-logo-30.png",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot/images/SendGen-logo-30.png"
     },
     {
       "Identity": "/home/neco/MEGA/Ionar/Brisa/SendGen/SendGen.Web/wwwroot/images/SendGen-logo.png",

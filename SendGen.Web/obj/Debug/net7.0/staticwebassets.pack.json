@@ -13,6 +13,10 @@
       "PackagePath": "staticwebassets/favicon.ico"
     },
     {
+      "Id": "/home/neco/MEGA/Ionar/Brisa/SendGen/SendGen.Web/wwwroot/images/SendGen-logo-30.png",
+      "PackagePath": "staticwebassets/images/SendGen-logo-30.png"
+    },
+    {
       "Id": "/home/neco/MEGA/Ionar/Brisa/SendGen/SendGen.Web/wwwroot/images/SendGen-logo.png",
       "PackagePath": "staticwebassets/images/SendGen-logo.png"
     },
