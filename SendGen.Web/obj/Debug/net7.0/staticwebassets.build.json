@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "sNL2UyNOs1ow83NeXUeCMWRwI54E9j63D33lu4Kus20=",
+  "Hash": "RpSSaXWUS/dRVNtBmarypiG93sbQWsoyin4VSKhluqI=",
   "Source": "SendGen.Web",
   "BasePath": "_content/SendGen.Web",
   "Mode": "Default",
@@ -2089,6 +2089,23 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\lib\\jquery-validation-unobtrusive\\LICENSE.txt"
+    },
+    {
+      "Identity": "C:\\Users\\Softex\\Documents\\SendGen.Web\\SendGen.Web\\wwwroot\\pages\\Clientes\\Index.js",
+      "SourceId": "SendGen.Web",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\Softex\\Documents\\SendGen.Web\\SendGen.Web\\wwwroot\\",
+      "BasePath": "_content/SendGen.Web",
+      "RelativePath": "pages/Clientes/Index.js",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\pages\\Clientes\\Index.js"
     }
   ]
 }

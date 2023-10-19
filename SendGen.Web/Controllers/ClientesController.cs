@@ -6,16 +6,26 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using SendGen.Domain.SendGenDomains.Data;
+using SendGen.Repository.OpaSuiteRepositories;
 
 namespace SendGen.Web.Controllers
 {
 	public class ClientesController : Controller
 	{
 		private readonly SendGenContexto _context;
+		private readonly ITemplateRepository templateRepository;
 
-		public ClientesController(SendGenContexto context)
+		public ClientesController(
+
+			SendGenContexto context
+
+			, ITemplateRepository templateRepository
+
+
+			)
 		{
 			_context = context;
+			this.templateRepository = templateRepository;
 		}
 
 		// GET: Clientes
@@ -29,7 +39,7 @@ namespace SendGen.Web.Controllers
 			}
 
 			ViewData["SomenteComTelefone"] = somenteComTelefone;
-				
+
 
 
 			return View(await listaClientes.ToListAsync());
@@ -167,5 +177,39 @@ namespace SendGen.Web.Controllers
 		{
 			return (_context.Cliente?.Any(e => e.ClienteId == id)).GetValueOrDefault();
 		}
+
+
+
+
+
+
+
+		[HttpPost]
+		public async Task<IActionResult> EnviarMensagem(int clienteId)
+		{
+			Cliente? cliente = await _context.Cliente.FirstOrDefaultAsync(c => c.ClienteId == clienteId);
+
+			if (cliente == null)
+			{
+				return NotFound();
+			}
+
+			if (cliente.Celular == null || cliente.Celular == "")
+			{
+				throw new Exception("O cliente informado não possuí celular cadastrado!");
+			}
+
+			await templateRepository.Send(cliente.Celular.Trim());
+
+			return Json(new
+			{
+				Situacao = "OK",
+				Mensagem = "Mensagem enviada!"
+			});
+		}
+
+
+
+
 	}
 }

@@ -14,8 +14,4 @@
     <ProjectReference Include="..\SendGen.Domain\SendGen.Domain.csproj" />
   </ItemGroup>
 
-  <ItemGroup>
-    <Folder Include="OpaSuiteRepositories\" />
-  </ItemGroup>
-
 </Project>
