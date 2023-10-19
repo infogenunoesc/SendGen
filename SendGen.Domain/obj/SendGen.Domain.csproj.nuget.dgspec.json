@@ -1,27 +1,25 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Softex\\Documents\\SendGen.Web\\SendGen.Domain\\SendGen.Domain.csproj": {}
+    "/home/neco/MEGA/Ionar/Brisa/SendGen/SendGen.Domain/SendGen.Domain.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Softex\\Documents\\SendGen.Web\\SendGen.Domain\\SendGen.Domain.csproj": {
+    "/home/neco/MEGA/Ionar/Brisa/SendGen/SendGen.Domain/SendGen.Domain.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Softex\\Documents\\SendGen.Web\\SendGen.Domain\\SendGen.Domain.csproj",
+        "projectUniqueName": "/home/neco/MEGA/Ionar/Brisa/SendGen/SendGen.Domain/SendGen.Domain.csproj",
         "projectName": "SendGen.Domain",
-        "projectPath": "C:\\Users\\Softex\\Documents\\SendGen.Web\\SendGen.Domain\\SendGen.Domain.csproj",
-        "packagesPath": "C:\\Users\\Softex\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Softex\\Documents\\SendGen.Web\\SendGen.Domain\\obj\\",
+        "projectPath": "/home/neco/MEGA/Ionar/Brisa/SendGen/SendGen.Domain/SendGen.Domain.csproj",
+        "packagesPath": "/home/neco/.nuget/packages/",
+        "outputPath": "/home/neco/MEGA/Ionar/Brisa/SendGen/SendGen.Domain/obj/",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\Softex\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+          "/home/neco/.nuget/NuGet/NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "net7.0"
         ],
         "sources": {
-          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
@@ -75,7 +73,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.401\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "/home/neco/.dotnet/sdk/7.0.400/RuntimeIdentifierGraph.json"
         }
       }
     }
