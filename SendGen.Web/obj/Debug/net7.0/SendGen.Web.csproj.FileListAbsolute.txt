@@ -1691,3 +1691,5 @@ C:\Users\Softex\Documents\SendGen.Web\SendGen.Web\obj\Debug\net7.0\refint\SendGe
 C:\Users\Softex\Documents\SendGen.Web\SendGen.Web\obj\Debug\net7.0\SendGen.Web.pdb
 C:\Users\Softex\Documents\SendGen.Web\SendGen.Web\obj\Debug\net7.0\SendGen.Web.genruntimeconfig.cache
 C:\Users\Softex\Documents\SendGen.Web\SendGen.Web\obj\Debug\net7.0\ref\SendGen.Web.dll
+C:\Users\Softex\Documents\SendGen.Web\SendGen.Web\bin\Debug\net7.0\Flurl.dll
+C:\Users\Softex\Documents\SendGen.Web\SendGen.Web\bin\Debug\net7.0\Flurl.Http.dll
