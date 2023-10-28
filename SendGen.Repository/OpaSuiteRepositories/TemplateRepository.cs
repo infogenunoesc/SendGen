@@ -10,6 +10,11 @@ namespace SendGen.Repository.OpaSuiteRepositories
 
 		public async Task Send(string telefoneCliente, string nome)
 		{
+			if (string.IsNullOrEmpty(telefoneCliente)) throw new ArgumentNullException();
+			if (!telefoneCliente.StartsWith("+")) throw new Exception("O telefone deve começar com \"+\".");
+			if (string.IsNullOrEmpty(nome)) throw new ArgumentNullException();
+
+
 #if DEBUG
 			telefoneCliente = "+5549999153242";
 #endif
