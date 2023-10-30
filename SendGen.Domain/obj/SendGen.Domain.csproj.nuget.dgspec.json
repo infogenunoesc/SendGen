@@ -1,25 +1,27 @@
 {
   "format": 1,
   "restore": {
-    "/home/neco/MEGA/Ionar/Brisa/SendGen/SendGen.Domain/SendGen.Domain.csproj": {}
+    "C:\\Projeto\\Github\\SendGen\\SendGen.Domain\\SendGen.Domain.csproj": {}
   },
   "projects": {
-    "/home/neco/MEGA/Ionar/Brisa/SendGen/SendGen.Domain/SendGen.Domain.csproj": {
+    "C:\\Projeto\\Github\\SendGen\\SendGen.Domain\\SendGen.Domain.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/home/neco/MEGA/Ionar/Brisa/SendGen/SendGen.Domain/SendGen.Domain.csproj",
+        "projectUniqueName": "C:\\Projeto\\Github\\SendGen\\SendGen.Domain\\SendGen.Domain.csproj",
         "projectName": "SendGen.Domain",
-        "projectPath": "/home/neco/MEGA/Ionar/Brisa/SendGen/SendGen.Domain/SendGen.Domain.csproj",
-        "packagesPath": "/home/neco/.nuget/packages/",
-        "outputPath": "/home/neco/MEGA/Ionar/Brisa/SendGen/SendGen.Domain/obj/",
+        "projectPath": "C:\\Projeto\\Github\\SendGen\\SendGen.Domain\\SendGen.Domain.csproj",
+        "packagesPath": "C:\\Users\\Morgane\\.nuget\\packages\\",
+        "outputPath": "C:\\Projeto\\Github\\SendGen\\SendGen.Domain\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "/home/neco/.nuget/NuGet/NuGet.Config"
+          "C:\\Users\\Morgane\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
           "net7.0"
         ],
         "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
@@ -73,7 +75,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "/home/neco/.dotnet/sdk/7.0.400/RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.400\\RuntimeIdentifierGraph.json"
         }
       }
     }

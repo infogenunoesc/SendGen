@@ -179,11 +179,6 @@ namespace SendGen.Web.Controllers
 		}
 
 
-
-
-
-
-
 		[HttpPost]
 		public async Task<IActionResult> EnviarMensagem(int clienteId)
 		{

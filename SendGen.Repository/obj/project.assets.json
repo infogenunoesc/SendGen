@@ -2669,32 +2669,34 @@
     ]
   },
   "packageFolders": {
-    "/home/neco/.nuget/packages/": {}
+    "C:\\Users\\Morgane\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "/home/neco/MEGA/Ionar/Brisa/SendGen/SendGen.Repository/SendGen.Repository.csproj",
+      "projectUniqueName": "C:\\Projeto\\Github\\SendGen\\SendGen.Repository\\SendGen.Repository.csproj",
       "projectName": "SendGen.Repository",
-      "projectPath": "/home/neco/MEGA/Ionar/Brisa/SendGen/SendGen.Repository/SendGen.Repository.csproj",
-      "packagesPath": "/home/neco/.nuget/packages/",
-      "outputPath": "/home/neco/MEGA/Ionar/Brisa/SendGen/SendGen.Repository/obj/",
+      "projectPath": "C:\\Projeto\\Github\\SendGen\\SendGen.Repository\\SendGen.Repository.csproj",
+      "packagesPath": "C:\\Users\\Morgane\\.nuget\\packages\\",
+      "outputPath": "C:\\Projeto\\Github\\SendGen\\SendGen.Repository\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "/home/neco/.nuget/NuGet/NuGet.Config"
+        "C:\\Users\\Morgane\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
         "net7.0"
       ],
       "sources": {
+        "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
         "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {
         "net7.0": {
           "targetAlias": "net7.0",
           "projectReferences": {
-            "/home/neco/MEGA/Ionar/Brisa/SendGen/SendGen.Domain/SendGen.Domain.csproj": {
-              "projectPath": "/home/neco/MEGA/Ionar/Brisa/SendGen/SendGen.Domain/SendGen.Domain.csproj"
+            "C:\\Projeto\\Github\\SendGen\\SendGen.Domain\\SendGen.Domain.csproj": {
+              "projectPath": "C:\\Projeto\\Github\\SendGen\\SendGen.Domain\\SendGen.Domain.csproj"
             }
           }
         }
@@ -2724,7 +2726,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "/home/neco/.dotnet/sdk/7.0.400/RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.400\\RuntimeIdentifierGraph.json"
       }
     }
   }
