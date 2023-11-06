@@ -179,6 +179,11 @@ namespace SendGen.Web.Controllers
 		}
 
 
+
+
+
+
+
 		[HttpPost]
 		public async Task<IActionResult> EnviarMensagem(int clienteId)
 		{
@@ -194,7 +199,7 @@ namespace SendGen.Web.Controllers
 				throw new Exception("O cliente informado não possuí celular cadastrado!");
 			}
 
-			await templateRepository.Send(cliente.Celular.Trim());
+			await templateRepository.Send(cliente.Celular.Trim(), cliente.Nome!.Trim());
 
 			return Json(new
 			{

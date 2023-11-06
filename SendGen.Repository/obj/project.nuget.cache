@@ -1,12 +1,14 @@
 {
   "version": 2,
-  "dgSpecHash": "GQBurVs1+td2WigJNfxFhMR9DO+nfnvdVUT+q2NibbKxygz0xgKHaArmN1h/XU0T+5mLAi9ONEN+EP98czip6w==",
+  "dgSpecHash": "NccQIxPlRlsk/5s9z7dZ5sMnBaLGEHSR3qIq0J8gTDHJ4v4HMfJKLTGW3ep7KlouAV+AlE/A0r2uFrgP6Pockg==",
   "success": true,
   "projectFilePath": "C:\\Projeto\\Github\\SendGen\\SendGen.Repository\\SendGen.Repository.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Morgane\\.nuget\\packages\\azure.core\\1.25.0\\azure.core.1.25.0.nupkg.sha512",
     "C:\\Users\\Morgane\\.nuget\\packages\\azure.identity\\1.7.0\\azure.identity.1.7.0.nupkg.sha512",
     "C:\\Users\\Morgane\\.nuget\\packages\\dapper\\2.1.11\\dapper.2.1.11.nupkg.sha512",
+    "C:\\Users\\Morgane\\.nuget\\packages\\flurl\\3.0.7\\flurl.3.0.7.nupkg.sha512",
+    "C:\\Users\\Morgane\\.nuget\\packages\\flurl.http\\3.2.4\\flurl.http.3.2.4.nupkg.sha512",
     "C:\\Users\\Morgane\\.nuget\\packages\\microsoft.bcl.asyncinterfaces\\1.1.1\\microsoft.bcl.asyncinterfaces.1.1.1.nupkg.sha512",
     "C:\\Users\\Morgane\\.nuget\\packages\\microsoft.csharp\\4.5.0\\microsoft.csharp.4.5.0.nupkg.sha512",
     "C:\\Users\\Morgane\\.nuget\\packages\\microsoft.data.sqlclient\\5.1.1\\microsoft.data.sqlclient.5.1.1.nupkg.sha512",
@@ -37,6 +39,7 @@
     "C:\\Users\\Morgane\\.nuget\\packages\\microsoft.netcore.targets\\1.1.0\\microsoft.netcore.targets.1.1.0.nupkg.sha512",
     "C:\\Users\\Morgane\\.nuget\\packages\\microsoft.sqlserver.server\\1.0.0\\microsoft.sqlserver.server.1.0.0.nupkg.sha512",
     "C:\\Users\\Morgane\\.nuget\\packages\\microsoft.win32.systemevents\\6.0.0\\microsoft.win32.systemevents.6.0.0.nupkg.sha512",
+    "C:\\Users\\Morgane\\.nuget\\packages\\newtonsoft.json\\12.0.2\\newtonsoft.json.12.0.2.nupkg.sha512",
     "C:\\Users\\Morgane\\.nuget\\packages\\system.configuration.configurationmanager\\6.0.1\\system.configuration.configurationmanager.6.0.1.nupkg.sha512",
     "C:\\Users\\Morgane\\.nuget\\packages\\system.diagnostics.diagnosticsource\\6.0.0\\system.diagnostics.diagnosticsource.6.0.0.nupkg.sha512",
     "C:\\Users\\Morgane\\.nuget\\packages\\system.drawing.common\\6.0.0\\system.drawing.common.6.0.0.nupkg.sha512",

@@ -5,14 +5,35 @@ using SendGen.Repository.SendGenRepositories;
 
 var builder = WebApplication.CreateBuilder(args);
 
+
+
+
+
+
+
+
+
 var connectionString = builder.Configuration.GetConnectionString("DefaultConnection") ?? throw new InvalidOperationException("Connection string 'DefaultConnection' not found.");
 builder.Services.AddDbContext<SendGenContexto>(options =>
     options.UseSqlServer(connectionString));
+
 
 // SendGen
 builder.Services.AddScoped<IClienteRepository, ClienteRepository>();
 // OpaSuite
 builder.Services.AddScoped<ITemplateRepository, TemplateRepository>();
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 // Add services to the container.

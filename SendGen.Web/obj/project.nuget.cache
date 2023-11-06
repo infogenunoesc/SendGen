@@ -1,12 +1,14 @@
 {
   "version": 2,
-  "dgSpecHash": "VMkc1zqK5SafEhJGi9I7OkWSGBKTN/eyDBSJc8ubkduMSdOd5Ww9dqwh6HiAJF6rnypN76AeoFm5/1l/szDw4Q==",
+  "dgSpecHash": "w9v2J0Urf8nS1jRhN+kNrStCUG4nq/eXTCcCP60v2DE72fiw/Hzb9hCB+L9vpvkLjIitZPPVSP1N4PnzIqt2Aw==",
   "success": true,
   "projectFilePath": "C:\\Projeto\\Github\\SendGen\\SendGen.Web\\SendGen.Web.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Morgane\\.nuget\\packages\\azure.core\\1.25.0\\azure.core.1.25.0.nupkg.sha512",
     "C:\\Users\\Morgane\\.nuget\\packages\\azure.identity\\1.7.0\\azure.identity.1.7.0.nupkg.sha512",
     "C:\\Users\\Morgane\\.nuget\\packages\\dapper\\2.1.11\\dapper.2.1.11.nupkg.sha512",
+    "C:\\Users\\Morgane\\.nuget\\packages\\flurl\\3.0.7\\flurl.3.0.7.nupkg.sha512",
+    "C:\\Users\\Morgane\\.nuget\\packages\\flurl.http\\3.2.4\\flurl.http.3.2.4.nupkg.sha512",
     "C:\\Users\\Morgane\\.nuget\\packages\\humanizer\\2.14.1\\humanizer.2.14.1.nupkg.sha512",
     "C:\\Users\\Morgane\\.nuget\\packages\\humanizer.core\\2.14.1\\humanizer.core.2.14.1.nupkg.sha512",
     "C:\\Users\\Morgane\\.nuget\\packages\\humanizer.core.af\\2.14.1\\humanizer.core.af.2.14.1.nupkg.sha512",
