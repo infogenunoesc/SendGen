@@ -9,61 +9,65 @@ build_property.EnforceExtendedAnalyzerRules =
 build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property.RootNamespace = SendGen.Web
 build_property.RootNamespace = SendGen.Web
-build_property.ProjectDir = C:\Users\Softex\Documents\SendGen.Web\SendGen.Web\
+build_property.ProjectDir = C:\Projeto\Github\SendGen\SendGen.Web\
 build_property.RazorLangVersion = 7.0
 build_property.SupportLocalizedComponentNames = 
 build_property.GenerateRazorMetadataSourceChecksumAttributes = true
-build_property.MSBuildProjectDirectory = C:\Users\Softex\Documents\SendGen.Web\SendGen.Web
+build_property.MSBuildProjectDirectory = C:\Projeto\Github\SendGen\SendGen.Web
 build_property._RazorSourceGeneratorDebug = 
 
-[C:/Users/Softex/Documents/SendGen.Web/SendGen.Web/Views/Clientes/Create.cshtml]
+[C:/Projeto/Github/SendGen/SendGen.Web/Views/Clientes/Create.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2xpZW50ZXNcQ3JlYXRlLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Softex/Documents/SendGen.Web/SendGen.Web/Views/Clientes/Delete.cshtml]
+[C:/Projeto/Github/SendGen/SendGen.Web/Views/Clientes/Delete.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2xpZW50ZXNcRGVsZXRlLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Softex/Documents/SendGen.Web/SendGen.Web/Views/Clientes/Details.cshtml]
+[C:/Projeto/Github/SendGen/SendGen.Web/Views/Clientes/Details.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2xpZW50ZXNcRGV0YWlscy5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Softex/Documents/SendGen.Web/SendGen.Web/Views/Clientes/Edit.cshtml]
+[C:/Projeto/Github/SendGen/SendGen.Web/Views/Clientes/Edit.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2xpZW50ZXNcRWRpdC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Softex/Documents/SendGen.Web/SendGen.Web/Views/Clientes/Index.cshtml]
+[C:/Projeto/Github/SendGen/SendGen.Web/Views/Clientes/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2xpZW50ZXNcSW5kZXguY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Softex/Documents/SendGen.Web/SendGen.Web/Views/Home/Index.cshtml]
+[C:/Projeto/Github/SendGen/SendGen.Web/Views/Generic/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcR2VuZXJpY1xJbmRleC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Projeto/Github/SendGen/SendGen.Web/Views/Home/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Softex/Documents/SendGen.Web/SendGen.Web/Views/Home/Privacy.cshtml]
+[C:/Projeto/Github/SendGen/SendGen.Web/Views/Home/Privacy.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxQcml2YWN5LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Softex/Documents/SendGen.Web/SendGen.Web/Views/ObterClientes/Index.cshtml]
+[C:/Projeto/Github/SendGen/SendGen.Web/Views/ObterClientes/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcT2J0ZXJDbGllbnRlc1xJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Softex/Documents/SendGen.Web/SendGen.Web/Views/Shared/Error.cshtml]
+[C:/Projeto/Github/SendGen/SendGen.Web/Views/Shared/Error.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXEVycm9yLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Softex/Documents/SendGen.Web/SendGen.Web/Views/Shared/_ValidationScriptsPartial.cshtml]
+[C:/Projeto/Github/SendGen/SendGen.Web/Views/Shared/_ValidationScriptsPartial.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9WYWxpZGF0aW9uU2NyaXB0c1BhcnRpYWwuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Softex/Documents/SendGen.Web/SendGen.Web/Views/_ViewImports.cshtml]
+[C:/Projeto/Github/SendGen/SendGen.Web/Views/_ViewImports.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdJbXBvcnRzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Softex/Documents/SendGen.Web/SendGen.Web/Views/_ViewStart.cshtml]
+[C:/Projeto/Github/SendGen/SendGen.Web/Views/_ViewStart.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdTdGFydC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Softex/Documents/SendGen.Web/SendGen.Web/Views/Shared/_Layout.cshtml]
+[C:/Projeto/Github/SendGen/SendGen.Web/Views/Shared/_Layout.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9MYXlvdXQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = b-muzg936aex

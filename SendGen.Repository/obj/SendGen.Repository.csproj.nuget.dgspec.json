@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Softex\\Documents\\SendGen.Web\\SendGen.Repository\\SendGen.Repository.csproj": {}
+    "C:\\Projeto\\Github\\SendGen\\SendGen.Repository\\SendGen.Repository.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Softex\\Documents\\SendGen.Web\\SendGen.Domain\\SendGen.Domain.csproj": {
+    "C:\\Projeto\\Github\\SendGen\\SendGen.Domain\\SendGen.Domain.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Softex\\Documents\\SendGen.Web\\SendGen.Domain\\SendGen.Domain.csproj",
+        "projectUniqueName": "C:\\Projeto\\Github\\SendGen\\SendGen.Domain\\SendGen.Domain.csproj",
         "projectName": "SendGen.Domain",
-        "projectPath": "C:\\Users\\Softex\\Documents\\SendGen.Web\\SendGen.Domain\\SendGen.Domain.csproj",
-        "packagesPath": "C:\\Users\\Softex\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Softex\\Documents\\SendGen.Web\\SendGen.Domain\\obj\\",
+        "projectPath": "C:\\Projeto\\Github\\SendGen\\SendGen.Domain\\SendGen.Domain.csproj",
+        "packagesPath": "C:\\Users\\Morgane\\.nuget\\packages\\",
+        "outputPath": "C:\\Projeto\\Github\\SendGen\\SendGen.Domain\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\Softex\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\Morgane\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -75,21 +75,21 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.401\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.403\\RuntimeIdentifierGraph.json"
         }
       }
     },
-    "C:\\Users\\Softex\\Documents\\SendGen.Web\\SendGen.Repository\\SendGen.Repository.csproj": {
+    "C:\\Projeto\\Github\\SendGen\\SendGen.Repository\\SendGen.Repository.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Softex\\Documents\\SendGen.Web\\SendGen.Repository\\SendGen.Repository.csproj",
+        "projectUniqueName": "C:\\Projeto\\Github\\SendGen\\SendGen.Repository\\SendGen.Repository.csproj",
         "projectName": "SendGen.Repository",
-        "projectPath": "C:\\Users\\Softex\\Documents\\SendGen.Web\\SendGen.Repository\\SendGen.Repository.csproj",
-        "packagesPath": "C:\\Users\\Softex\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Softex\\Documents\\SendGen.Web\\SendGen.Repository\\obj\\",
+        "projectPath": "C:\\Projeto\\Github\\SendGen\\SendGen.Repository\\SendGen.Repository.csproj",
+        "packagesPath": "C:\\Users\\Morgane\\.nuget\\packages\\",
+        "outputPath": "C:\\Projeto\\Github\\SendGen\\SendGen.Repository\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\Softex\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\Morgane\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -103,8 +103,8 @@
           "net7.0": {
             "targetAlias": "net7.0",
             "projectReferences": {
-              "C:\\Users\\Softex\\Documents\\SendGen.Web\\SendGen.Domain\\SendGen.Domain.csproj": {
-                "projectPath": "C:\\Users\\Softex\\Documents\\SendGen.Web\\SendGen.Domain\\SendGen.Domain.csproj"
+              "C:\\Projeto\\Github\\SendGen\\SendGen.Domain\\SendGen.Domain.csproj": {
+                "projectPath": "C:\\Projeto\\Github\\SendGen\\SendGen.Domain\\SendGen.Domain.csproj"
               }
             }
           }
@@ -144,7 +144,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.401\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.403\\RuntimeIdentifierGraph.json"
         }
       }
     }

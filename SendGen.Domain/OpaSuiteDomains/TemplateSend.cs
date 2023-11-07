@@ -6,11 +6,6 @@ using System.Threading.Tasks;
 
 namespace SendGen.Domain.OpaSuiteDomains
 {
-    public class Contato
-    {
-        public string canalCliente { get; set; }
-    }
-
     public class TemplateSend
     {
         public Contato contato { get; set; }

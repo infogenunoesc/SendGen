@@ -23,7 +23,7 @@ namespace SendGen.Repository.OpaSuiteRepositories
 			{
 				contato = new Contato
 				{
-					canalCliente = telefoneCliente
+                    celularCompleto = telefoneCliente
 				},
 				template = new Template
 				{
@@ -35,7 +35,6 @@ namespace SendGen.Repository.OpaSuiteRepositories
 				},
 				canal = "64f09e6332843f9dada2d0d6"
 			};
-
 
 			var client = new HttpClient();
 			var request = new HttpRequestMessage(HttpMethod.Post, "https://demo2.opasuite.com.br/api/v1/template/send");

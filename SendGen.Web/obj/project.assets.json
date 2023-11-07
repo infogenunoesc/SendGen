@@ -2352,6 +2352,22 @@
           "lib/netstandard2.0/NuGet.Versioning.dll": {}
         }
       },
+      "RestSharp/110.2.0": {
+        "type": "package",
+        "dependencies": {
+          "System.Text.Json": "7.0.2"
+        },
+        "compile": {
+          "lib/net7.0/RestSharp.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net7.0/RestSharp.dll": {
+            "related": ".xml"
+          }
+        }
+      },
       "runtime.debian.8-x64.runtime.native.System.Security.Cryptography.OpenSsl/4.3.0": {
         "type": "package",
         "runtimeTargets": {
@@ -3932,7 +3948,7 @@
           }
         }
       },
-      "System.Text.Json/7.0.0": {
+      "System.Text.Json/7.0.2": {
         "type": "package",
         "dependencies": {
           "System.Text.Encodings.Web": "7.0.0"
@@ -7665,6 +7681,26 @@
         "nuget.versioning.nuspec"
       ]
     },
+    "RestSharp/110.2.0": {
+      "sha512": "FXGw0IMcqY7yO/hzS9QrD3iNswNgb9UxJnxWmfOxmGs4kRlZWqdtBoGPLuhlbgsDzX1RFo4WKui8TGGKXWKalw==",
+      "type": "package",
+      "path": "restsharp/110.2.0",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "lib/net471/RestSharp.dll",
+        "lib/net471/RestSharp.xml",
+        "lib/net6.0/RestSharp.dll",
+        "lib/net6.0/RestSharp.xml",
+        "lib/net7.0/RestSharp.dll",
+        "lib/net7.0/RestSharp.xml",
+        "lib/netstandard2.0/RestSharp.dll",
+        "lib/netstandard2.0/RestSharp.xml",
+        "restsharp.110.2.0.nupkg.sha512",
+        "restsharp.nuspec",
+        "restsharp.png"
+      ]
+    },
     "runtime.debian.8-x64.runtime.native.System.Security.Cryptography.OpenSsl/4.3.0": {
       "sha512": "HdSSp5MnJSsg08KMfZThpuLPJpPwE5hBXvHwoKWosyHHfe8Mh5WKT0ylEOf6yNzX6Ngjxe4Whkafh5q7Ymac4Q==",
       "type": "package",
@@ -11264,10 +11300,10 @@
         "useSharedDesignerContext.txt"
       ]
     },
-    "System.Text.Json/7.0.0": {
-      "sha512": "DaGSsVqKsn/ia6RG8frjwmJonfos0srquhw09TlT8KRw5I43E+4gs+/bZj4K0vShJ5H9imCuXupb4RmS+dBy3w==",
+    "System.Text.Json/7.0.2": {
+      "sha512": "/LZf/JrGyilojqwpaywb+sSz8Tew7ij4K/Sk+UW8AKfAK7KRhR6mKpKtTm06cYA7bCpGTWfYksIW+mVsdxPegQ==",
       "type": "package",
-      "path": "system.text.json/7.0.0",
+      "path": "system.text.json/7.0.2",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
@@ -11330,7 +11366,7 @@
         "lib/net7.0/System.Text.Json.xml",
         "lib/netstandard2.0/System.Text.Json.dll",
         "lib/netstandard2.0/System.Text.Json.xml",
-        "system.text.json.7.0.0.nupkg.sha512",
+        "system.text.json.7.0.2.nupkg.sha512",
         "system.text.json.nuspec",
         "useSharedDesignerContext.txt"
       ]
@@ -11862,24 +11898,25 @@
       "Microsoft.EntityFrameworkCore.SqlServer >= 7.0.12",
       "Microsoft.EntityFrameworkCore.Tools >= 7.0.12",
       "Microsoft.VisualStudio.Web.CodeGeneration.Design >= 7.0.9",
+      "RestSharp >= 110.2.0",
       "SendGen.Domain >= 1.0.0",
       "SendGen.Repository >= 1.0.0"
     ]
   },
   "packageFolders": {
-    "C:\\Users\\Softex\\.nuget\\packages\\": {}
+    "C:\\Users\\Morgane\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Softex\\Documents\\SendGen.Web\\SendGen.Web\\SendGen.Web.csproj",
+      "projectUniqueName": "C:\\Projeto\\Github\\SendGen\\SendGen.Web\\SendGen.Web.csproj",
       "projectName": "SendGen.Web",
-      "projectPath": "C:\\Users\\Softex\\Documents\\SendGen.Web\\SendGen.Web\\SendGen.Web.csproj",
-      "packagesPath": "C:\\Users\\Softex\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Softex\\Documents\\SendGen.Web\\SendGen.Web\\obj\\",
+      "projectPath": "C:\\Projeto\\Github\\SendGen\\SendGen.Web\\SendGen.Web.csproj",
+      "packagesPath": "C:\\Users\\Morgane\\.nuget\\packages\\",
+      "outputPath": "C:\\Projeto\\Github\\SendGen\\SendGen.Web\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\Softex\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\Morgane\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -11893,11 +11930,11 @@
         "net7.0": {
           "targetAlias": "net7.0",
           "projectReferences": {
-            "C:\\Users\\Softex\\Documents\\SendGen.Web\\SendGen.Domain\\SendGen.Domain.csproj": {
-              "projectPath": "C:\\Users\\Softex\\Documents\\SendGen.Web\\SendGen.Domain\\SendGen.Domain.csproj"
+            "C:\\Projeto\\Github\\SendGen\\SendGen.Domain\\SendGen.Domain.csproj": {
+              "projectPath": "C:\\Projeto\\Github\\SendGen\\SendGen.Domain\\SendGen.Domain.csproj"
             },
-            "C:\\Users\\Softex\\Documents\\SendGen.Web\\SendGen.Repository\\SendGen.Repository.csproj": {
-              "projectPath": "C:\\Users\\Softex\\Documents\\SendGen.Web\\SendGen.Repository\\SendGen.Repository.csproj"
+            "C:\\Projeto\\Github\\SendGen\\SendGen.Repository\\SendGen.Repository.csproj": {
+              "projectPath": "C:\\Projeto\\Github\\SendGen\\SendGen.Repository\\SendGen.Repository.csproj"
             }
           }
         }
@@ -11951,6 +11988,10 @@
           "Microsoft.VisualStudio.Web.CodeGeneration.Design": {
             "target": "Package",
             "version": "[7.0.9, )"
+          },
+          "RestSharp": {
+            "target": "Package",
+            "version": "[110.2.0, )"
           }
         },
         "imports": [
@@ -11972,7 +12013,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.401\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.403\\RuntimeIdentifierGraph.json"
       }
     }
   }
