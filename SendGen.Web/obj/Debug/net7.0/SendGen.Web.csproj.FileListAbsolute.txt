@@ -2003,6 +2003,12 @@ C:\Projeto\Github\SendGen\SendGen.Web\bin\Debug\net7.0\Dapper.dll
 C:\Projeto\Github\SendGen\SendGen.Web\bin\Debug\net7.0\Flurl.dll
 C:\Projeto\Github\SendGen\SendGen.Web\bin\Debug\net7.0\Flurl.Http.dll
 C:\Projeto\Github\SendGen\SendGen.Web\bin\Debug\net7.0\Humanizer.dll
+C:\Projeto\Github\SendGen\SendGen.Web\bin\Debug\net7.0\System.Web.Mvc.dll
+C:\Projeto\Github\SendGen\SendGen.Web\bin\Debug\net7.0\System.Web.Razor.dll
+C:\Projeto\Github\SendGen\SendGen.Web\bin\Debug\net7.0\System.Web.Helpers.dll
+C:\Projeto\Github\SendGen\SendGen.Web\bin\Debug\net7.0\System.Web.WebPages.Deployment.dll
+C:\Projeto\Github\SendGen\SendGen.Web\bin\Debug\net7.0\System.Web.WebPages.Razor.dll
+C:\Projeto\Github\SendGen\SendGen.Web\bin\Debug\net7.0\System.Web.WebPages.dll
 C:\Projeto\Github\SendGen\SendGen.Web\bin\Debug\net7.0\Microsoft.AspNetCore.Cryptography.Internal.dll
 C:\Projeto\Github\SendGen\SendGen.Web\bin\Debug\net7.0\Microsoft.AspNetCore.Cryptography.KeyDerivation.dll
 C:\Projeto\Github\SendGen\SendGen.Web\bin\Debug\net7.0\Microsoft.AspNetCore.Diagnostics.EntityFrameworkCore.dll
@@ -2054,6 +2060,7 @@ C:\Projeto\Github\SendGen\SendGen.Web\bin\Debug\net7.0\Microsoft.VisualStudio.We
 C:\Projeto\Github\SendGen\SendGen.Web\bin\Debug\net7.0\Microsoft.VisualStudio.Web.CodeGeneration.Templating.dll
 C:\Projeto\Github\SendGen\SendGen.Web\bin\Debug\net7.0\Microsoft.VisualStudio.Web.CodeGeneration.Utils.dll
 C:\Projeto\Github\SendGen\SendGen.Web\bin\Debug\net7.0\Microsoft.VisualStudio.Web.CodeGenerators.Mvc.dll
+C:\Projeto\Github\SendGen\SendGen.Web\bin\Debug\net7.0\Microsoft.Web.Infrastructure.dll
 C:\Projeto\Github\SendGen\SendGen.Web\bin\Debug\net7.0\Microsoft.Win32.SystemEvents.dll
 C:\Projeto\Github\SendGen\SendGen.Web\bin\Debug\net7.0\Mono.TextTemplating.dll
 C:\Projeto\Github\SendGen\SendGen.Web\bin\Debug\net7.0\Newtonsoft.Json.dll
@@ -2261,4 +2268,3 @@ C:\Projeto\Github\SendGen\SendGen.Web\obj\Debug\net7.0\refint\SendGen.Web.dll
 C:\Projeto\Github\SendGen\SendGen.Web\obj\Debug\net7.0\SendGen.Web.pdb
 C:\Projeto\Github\SendGen\SendGen.Web\obj\Debug\net7.0\SendGen.Web.genruntimeconfig.cache
 C:\Projeto\Github\SendGen\SendGen.Web\obj\Debug\net7.0\ref\SendGen.Web.dll
-C:\Projeto\Github\SendGen\SendGen.Web\bin\Debug\net7.0\RestSharp.dll

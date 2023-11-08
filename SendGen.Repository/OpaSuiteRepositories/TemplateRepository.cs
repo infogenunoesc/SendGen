@@ -2,12 +2,12 @@
 using System.Net.Http.Headers;
 using System.Net.Http;
 using System.Text.Json;
+using Microsoft.AspNetCore.Mvc;
 
 namespace SendGen.Repository.OpaSuiteRepositories
 {
 	public class TemplateRepository : ITemplateRepository
 	{
-
 		public async Task Send(string telefoneCliente, string nome)
 		{
 			if (string.IsNullOrEmpty(telefoneCliente)) throw new ArgumentNullException();
@@ -23,7 +23,7 @@ namespace SendGen.Repository.OpaSuiteRepositories
 			{
 				contato = new Contato
 				{
-                    celularCompleto = telefoneCliente
+					canalCliente = telefoneCliente
 				},
 				template = new Template
 				{
@@ -35,6 +35,7 @@ namespace SendGen.Repository.OpaSuiteRepositories
 				},
 				canal = "64f09e6332843f9dada2d0d6"
 			};
+
 
 			var client = new HttpClient();
 			var request = new HttpRequestMessage(HttpMethod.Post, "https://demo2.opasuite.com.br/api/v1/template/send");
@@ -52,5 +53,7 @@ namespace SendGen.Repository.OpaSuiteRepositories
 
 			Console.WriteLine(await response.Content.ReadAsStringAsync());
 		}
-	}
+
+
+    }
 }
