@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "rXx0SHmfThCMJykPW3/vU3/LYXhllUTm0gpgFhHmDfc=",
+  "Hash": "5wO54NqXdX93XDCnQoGIGuEZF5vkwkoq9Wy3J0U+Ui4=",
   "Source": "SendGen.Web",
   "BasePath": "_content/SendGen.Web",
   "Mode": "Default",
@@ -2123,6 +2123,23 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot/lib/jquery/LICENSE.txt"
+    },
+    {
+      "Identity": "/home/neco/MEGA/Ionar/Brisa/SendGen/SendGen.Web/wwwroot/pages/Clientes/Index.js",
+      "SourceId": "SendGen.Web",
+      "SourceType": "Discovered",
+      "ContentRoot": "/home/neco/MEGA/Ionar/Brisa/SendGen/SendGen.Web/wwwroot/",
+      "BasePath": "_content/SendGen.Web",
+      "RelativePath": "pages/Clientes/Index.js",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot/pages/Clientes/Index.js"
     }
   ]
 }
