@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "yjBHtulYUPVX6iOC3JhDim6Z0GJiaOTyqkw3D96wOCfojYKHUrdnqeMnQLE0d+e//CL9UsevHhvIiUnb3EhJPw==",
+  "dgSpecHash": "R4+fLSIY3d4ttQWh/TOrnbA88R6zETyV9HpDLrl04HApVcnRHEVQ6NjH/Qq2MpCp8E9z//5VPmJrngdmzao9qQ==",
   "success": true,
-  "projectFilePath": "C:\\Projeto\\Github\\SendGen\\SendGen.Repository\\SendGen.Repository.csproj",
+  "projectFilePath": "C:\\Users\\Morgane\\Documents\\Projeto\\SendGen\\SendGen.Repository\\SendGen.Repository.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Morgane\\.nuget\\packages\\azure.core\\1.25.0\\azure.core.1.25.0.nupkg.sha512",
     "C:\\Users\\Morgane\\.nuget\\packages\\azure.identity\\1.7.0\\azure.identity.1.7.0.nupkg.sha512",

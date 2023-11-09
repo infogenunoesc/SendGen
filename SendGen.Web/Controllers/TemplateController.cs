@@ -1,7 +1,7 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using System.Text.Json;
+using Microsoft.AspNetCore.Mvc;
 using SendGen.Repository.SendGenRepositories;
 using SendGen.Domain.OpaSuiteDomains;
-using Newtonsoft.Json;
 
 namespace SendGen.Web.Controllers;
 
@@ -14,11 +14,9 @@ public class TemplateController : Controller
         this.utilitiesRepository = utilitiesRepository;
     }
 
-
-    public IActionResult templateGet() //JObject jsonData
+    public async Task<IActionResult> templateGet() //JObject jsonData
     {
         string metodoAPI = "contato";
-
 
         templateFilter filtros = new templateFilter
         {
@@ -34,16 +32,15 @@ public class TemplateController : Controller
             }
         };
 
-
-        string stringJSON = JsonConvert.SerializeObject(filtros);
+        string stringJSON = JsonSerializer.Serialize(filtros);
 
         Console.WriteLine(stringJSON);
 
-        return new OkObjectResult(utilitiesRepository.RequestGet(metodoAPI, stringJSON));
+        return await utilitiesRepository.RequestGet(metodoAPI, stringJSON);
     }
 
     public IActionResult Index()
-    {
+    {  
         return View();
     }
 }

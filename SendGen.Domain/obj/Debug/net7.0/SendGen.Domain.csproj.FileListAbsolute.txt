@@ -54,3 +54,17 @@ C:\Projeto\Github\SendGen\SendGen.Domain\obj\Debug\net7.0\refint\SendGen.Domain.
 C:\Projeto\Github\SendGen\SendGen.Domain\obj\Debug\net7.0\SendGen.Domain.pdb
 C:\Projeto\Github\SendGen\SendGen.Domain\obj\Debug\net7.0\SendGen.Domain.genruntimeconfig.cache
 C:\Projeto\Github\SendGen\SendGen.Domain\obj\Debug\net7.0\ref\SendGen.Domain.dll
+C:\Users\Morgane\Documents\Projeto\SendGen\SendGen.Domain\bin\Debug\net7.0\SendGen.Domain.deps.json
+C:\Users\Morgane\Documents\Projeto\SendGen\SendGen.Domain\bin\Debug\net7.0\SendGen.Domain.runtimeconfig.json
+C:\Users\Morgane\Documents\Projeto\SendGen\SendGen.Domain\bin\Debug\net7.0\SendGen.Domain.dll
+C:\Users\Morgane\Documents\Projeto\SendGen\SendGen.Domain\bin\Debug\net7.0\SendGen.Domain.pdb
+C:\Users\Morgane\Documents\Projeto\SendGen\SendGen.Domain\obj\Debug\net7.0\SendGen.Domain.csproj.AssemblyReference.cache
+C:\Users\Morgane\Documents\Projeto\SendGen\SendGen.Domain\obj\Debug\net7.0\SendGen.Domain.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Morgane\Documents\Projeto\SendGen\SendGen.Domain\obj\Debug\net7.0\SendGen.Domain.AssemblyInfoInputs.cache
+C:\Users\Morgane\Documents\Projeto\SendGen\SendGen.Domain\obj\Debug\net7.0\SendGen.Domain.AssemblyInfo.cs
+C:\Users\Morgane\Documents\Projeto\SendGen\SendGen.Domain\obj\Debug\net7.0\SendGen.Domain.csproj.CoreCompileInputs.cache
+C:\Users\Morgane\Documents\Projeto\SendGen\SendGen.Domain\obj\Debug\net7.0\SendGen.Domain.dll
+C:\Users\Morgane\Documents\Projeto\SendGen\SendGen.Domain\obj\Debug\net7.0\refint\SendGen.Domain.dll
+C:\Users\Morgane\Documents\Projeto\SendGen\SendGen.Domain\obj\Debug\net7.0\SendGen.Domain.pdb
+C:\Users\Morgane\Documents\Projeto\SendGen\SendGen.Domain\obj\Debug\net7.0\SendGen.Domain.genruntimeconfig.cache
+C:\Users\Morgane\Documents\Projeto\SendGen\SendGen.Domain\obj\Debug\net7.0\ref\SendGen.Domain.dll

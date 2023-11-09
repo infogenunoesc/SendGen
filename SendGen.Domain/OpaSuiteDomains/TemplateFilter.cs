@@ -4,7 +4,6 @@ public class filter
 {
     public string? atalho { get; set; }
     public string? tipo_mensagem { get; set; }
-
 }
 
 public class options
@@ -16,6 +15,6 @@ public class options
 
 public class templateFilter
 {
-    public filter filter { get; set; }
-    public options options { get; set; }
+    public filter? filter { get; set; }
+    public options? options { get; set; }
 }

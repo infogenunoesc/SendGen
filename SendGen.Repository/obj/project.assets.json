@@ -5588,19 +5588,24 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\Morgane\\.nuget\\packages\\": {}
+    "C:\\Users\\Morgane\\.nuget\\packages\\": {},
+    "D:\\Sistema\\Programas\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Projeto\\Github\\SendGen\\SendGen.Repository\\SendGen.Repository.csproj",
+      "projectUniqueName": "C:\\Users\\Morgane\\Documents\\Projeto\\SendGen\\SendGen.Repository\\SendGen.Repository.csproj",
       "projectName": "SendGen.Repository",
-      "projectPath": "C:\\Projeto\\Github\\SendGen\\SendGen.Repository\\SendGen.Repository.csproj",
+      "projectPath": "C:\\Users\\Morgane\\Documents\\Projeto\\SendGen\\SendGen.Repository\\SendGen.Repository.csproj",
       "packagesPath": "C:\\Users\\Morgane\\.nuget\\packages\\",
-      "outputPath": "C:\\Projeto\\Github\\SendGen\\SendGen.Repository\\obj\\",
+      "outputPath": "C:\\Users\\Morgane\\Documents\\Projeto\\SendGen\\SendGen.Repository\\obj\\",
       "projectStyle": "PackageReference",
+      "fallbackFolders": [
+        "D:\\Sistema\\Programas\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+      ],
       "configFilePaths": [
         "C:\\Users\\Morgane\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -5614,8 +5619,8 @@
         "net7.0": {
           "targetAlias": "net7.0",
           "projectReferences": {
-            "C:\\Projeto\\Github\\SendGen\\SendGen.Domain\\SendGen.Domain.csproj": {
-              "projectPath": "C:\\Projeto\\Github\\SendGen\\SendGen.Domain\\SendGen.Domain.csproj"
+            "C:\\Users\\Morgane\\Documents\\Projeto\\SendGen\\SendGen.Domain\\SendGen.Domain.csproj": {
+              "projectPath": "C:\\Users\\Morgane\\Documents\\Projeto\\SendGen\\SendGen.Domain\\SendGen.Domain.csproj"
             }
           }
         }
@@ -5667,7 +5672,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.403\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.401\\RuntimeIdentifierGraph.json"
       }
     }
   },
