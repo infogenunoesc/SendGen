@@ -2,12 +2,12 @@
 using System.Net.Http.Headers;
 using System.Net.Http;
 using System.Text.Json;
+using Microsoft.AspNetCore.Mvc;
 
 namespace SendGen.Repository.OpaSuiteRepositories
 {
 	public class TemplateRepository : ITemplateRepository
 	{
-
 		public async Task Send(string telefoneCliente, string nome)
 		{
 			if (string.IsNullOrEmpty(telefoneCliente)) throw new ArgumentNullException();
@@ -53,5 +53,7 @@ namespace SendGen.Repository.OpaSuiteRepositories
 
 			Console.WriteLine(await response.Content.ReadAsStringAsync());
 		}
-	}
+
+
+    }
 }

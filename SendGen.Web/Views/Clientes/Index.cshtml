@@ -6,15 +6,12 @@
 
 <h1>Index</h1>
 
-
 <form method="get" id="formPesquisar">
 
 	<label>Somente com Telefone?</label>
 	<input type="checkbox" name="somenteComTelefone" onchange="formPesquisar.submit()" value="true" @((bool)ViewBag.SomenteComTelefone ? "checked" : "") />
 
 </form>
-
-
 
 <p>
 	<a asp-action="Create">Create New</a>
