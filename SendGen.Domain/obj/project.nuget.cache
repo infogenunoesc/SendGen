@@ -1,11 +1,12 @@
 {
   "version": 2,
-  "dgSpecHash": "4spFOx0lFFVPQWXXrjMJDlzEcIV7dq3ownx1mPclvaZjkzEHzwDHwMAU0Y0HespMyd9uNQ9mPlQTANhQiDEBkg==",
+  "dgSpecHash": "CLtc7Vb4sj3SLUNTSN/czdX/zI+Euh9GVSIrh1V463ooe8/bu6ikUIqmzsVOZgoPBBb5CVZEonWpjQXNNYDF1Q==",
   "success": true,
   "projectFilePath": "C:\\Users\\Softex\\Documents\\SendGen.Web\\SendGen.Domain\\SendGen.Domain.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Softex\\.nuget\\packages\\azure.core\\1.25.0\\azure.core.1.25.0.nupkg.sha512",
     "C:\\Users\\Softex\\.nuget\\packages\\azure.identity\\1.7.0\\azure.identity.1.7.0.nupkg.sha512",
+    "C:\\Users\\Softex\\.nuget\\packages\\bootstrap\\5.3.2\\bootstrap.5.3.2.nupkg.sha512",
     "C:\\Users\\Softex\\.nuget\\packages\\dapper\\2.1.11\\dapper.2.1.11.nupkg.sha512",
     "C:\\Users\\Softex\\.nuget\\packages\\humanizer.core\\2.14.1\\humanizer.core.2.14.1.nupkg.sha512",
     "C:\\Users\\Softex\\.nuget\\packages\\microsoft.bcl.asyncinterfaces\\1.1.1\\microsoft.bcl.asyncinterfaces.1.1.1.nupkg.sha512",

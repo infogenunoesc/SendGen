@@ -57,6 +57,10 @@
               "suppressParent": "All",
               "target": "Package",
               "version": "[7.0.12, )"
+            },
+            "bootstrap": {
+              "target": "Package",
+              "version": "[5.3.2, )"
             }
           },
           "imports": [
@@ -126,6 +130,10 @@
             "Flurl.Http": {
               "target": "Package",
               "version": "[3.2.4, )"
+            },
+            "bootstrap": {
+              "target": "Package",
+              "version": "[5.3.2, )"
             }
           },
           "imports": [

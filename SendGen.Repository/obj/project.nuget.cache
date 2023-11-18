@@ -1,11 +1,12 @@
 {
   "version": 2,
-  "dgSpecHash": "rQlwEOx/B77fgIgtM1Hc8H9bC8Jmk6zRpqrpOWip4bg/lJzTHNk4FifIsv5r2i1JrMzP5aU2TcUQxQwzX15ICA==",
+  "dgSpecHash": "RkHaaoexGR4ClEPHUWADfVAg7SoP2ZGxYO1GfcE7G7e18vuLWKvDpvqdv9GRdqv41npNkphP2HfvcnytjtYqYw==",
   "success": true,
   "projectFilePath": "C:\\Users\\Softex\\Documents\\SendGen.Web\\SendGen.Repository\\SendGen.Repository.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Softex\\.nuget\\packages\\azure.core\\1.25.0\\azure.core.1.25.0.nupkg.sha512",
     "C:\\Users\\Softex\\.nuget\\packages\\azure.identity\\1.7.0\\azure.identity.1.7.0.nupkg.sha512",
+    "C:\\Users\\Softex\\.nuget\\packages\\bootstrap\\5.3.2\\bootstrap.5.3.2.nupkg.sha512",
     "C:\\Users\\Softex\\.nuget\\packages\\dapper\\2.1.11\\dapper.2.1.11.nupkg.sha512",
     "C:\\Users\\Softex\\.nuget\\packages\\flurl\\3.0.7\\flurl.3.0.7.nupkg.sha512",
     "C:\\Users\\Softex\\.nuget\\packages\\flurl.http\\3.2.4\\flurl.http.3.2.4.nupkg.sha512",
