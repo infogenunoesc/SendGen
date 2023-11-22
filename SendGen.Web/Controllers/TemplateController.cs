@@ -1,7 +1,7 @@
-﻿using System.Text.Json;
-using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Mvc;
 using SendGen.Repository.SendGenRepositories;
 using SendGen.Domain.OpaSuiteDomains;
+using Newtonsoft.Json;
 
 namespace SendGen.Web.Controllers;
 
@@ -14,27 +14,33 @@ public class TemplateController : Controller
         this.utilitiesRepository = utilitiesRepository;
     }
 
-    public async Task<IActionResult> templateGet() //JObject jsonData
+    public async Task<IActionResult> templateGet(string atalho, string tipo_mensagem, int skip, int limit) //JObject jsonData
     {
-        string metodoAPI = "contato";
+        string metodoAPI = "template";
+
+        atalho = "Informal";
 
         templateFilter filtros = new templateFilter
         {
             filter = new filter
             {
-                atalho = null,
-                tipo_mensagem = null
+                atalho = atalho,
+                tipo_mensagem = tipo_mensagem
             },
             options = new options
             {
-                limit = 1,
-                skip = 0
+                skip = skip,
+                limit = limit
             }
         };
 
-        string stringJSON = JsonSerializer.Serialize(filtros);
+        var settings = new JsonSerializerSettings
+        {
+            NullValueHandling = NullValueHandling.Ignore
+        };
 
-        Console.WriteLine(stringJSON);
+
+        string stringJSON = JsonConvert.SerializeObject(filtros, settings);
 
         return await utilitiesRepository.RequestGet(metodoAPI, stringJSON);
     }

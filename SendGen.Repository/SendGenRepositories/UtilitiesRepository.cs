@@ -1,4 +1,5 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using System.Text;
 
 namespace SendGen.Repository.SendGenRepositories
 {
@@ -11,10 +12,12 @@ namespace SendGen.Repository.SendGenRepositories
         {
             var endPoint = baseUrlAPI + metodoAPI;
 
+            Console.WriteLine("\n\ncontentJSON:"+contentJSON+"\n\n");
+
             var client = new HttpClient();
             var request = new HttpRequestMessage(HttpMethod.Get, endPoint);
             request.Headers.Add("Authorization", tokenOpaSuite);
-            var content = new StringContent(contentJSON, null, "application/json");
+            var content = new StringContent(contentJSON, Encoding.UTF8, "application/json");
             request.Content = content;
             var response = await client.SendAsync(request);
             response.EnsureSuccessStatusCode();
