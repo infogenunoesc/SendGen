@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace SendGen.Domain.SaborColonialDomains.Data
+﻿namespace SendGen.Domain.SaborColonialDomains.Data
 {
     //objeto do banco
     public class Transacionadores

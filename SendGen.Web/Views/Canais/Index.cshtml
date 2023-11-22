@@ -1,0 +1,39 @@
+﻿@model SendGen.Domain.OpaSuiteDomains.canaisGetFilter
+
+@using (Html.BeginForm("canaisGet", "Canais", FormMethod.Post))
+{
+
+<div>
+    @Html.LabelFor(filtroCanaisForm => filtroCanaisForm.filter.nome)
+    @Html.TextBoxFor(filtroCanaisForm => filtroCanaisForm.filter.nome)
+</div>
+<div>
+    @Html.LabelFor(filtroCanaisForm => filtroCanaisForm.filter.id_atendente)
+    @Html.TextBoxFor(filtroCanaisForm => filtroCanaisForm.filter.id_atendente)
+</div>
+<div>
+    @Html.LabelFor(filtroCanaisForm => filtroCanaisForm.filter.status)
+    @Html.TextBoxFor(filtroCanaisForm => filtroCanaisForm.filter.status)
+</div>
+<div>
+    @Html.LabelFor(filtroCanaisForm => filtroCanaisForm.filter.canal)
+    @Html.TextBoxFor(filtroCanaisForm => filtroCanaisForm.filter.canal)
+</div>
+<div>
+    @Html.LabelFor(filtroCanaisForm => filtroCanaisForm.filter.integracao)
+    @Html.TextBoxFor(filtroCanaisForm => filtroCanaisForm.filter.integracao)
+</div>
+
+
+
+<div> @* Options *@
+    @Html.LabelFor(filtroCanaisForm => filtroCanaisForm.options.skip)
+    @Html.TextBoxFor(filtroCanaisForm => filtroCanaisForm.options.skip)
+</div>
+<div>
+    @Html.LabelFor(filtroCanaisForm => filtroCanaisForm.options.limit)
+    @Html.TextBoxFor(filtroCanaisForm => filtroCanaisForm.options.limit)
+</div>
+
+    <input type="submit" value="Enviar" />
+}

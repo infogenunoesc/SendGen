@@ -1,20 +1,20 @@
 ﻿namespace SendGen.Domain.OpaSuiteDomains;
 
-public class filter
+public class filterTemplate
 {
     public string? atalho { get; set; }
     public string? tipo_mensagem { get; set; }
 }
 
-public class options
+public class optionsTemplate
 {
     public int? skip { get; set; }
     public int? limit { get; set; }
 
 }
 
-public class templateFilter
+public class templateGetFilter
 {
-    public filter? filter { get; set; }
-    public options? options { get; set; }
+    public filterTemplate? filter { get; set; }
+    public optionsTemplate? options { get; set; }
 }

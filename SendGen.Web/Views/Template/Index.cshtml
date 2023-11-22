@@ -1,13 +1,23 @@
-﻿@*
-    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
-*@
-@{
+﻿@model SendGen.Domain.OpaSuiteDomains.templateGetFilter
+
+@using (Html.BeginForm("templateGet", "Template", FormMethod.Post))
+{
+    <div>
+        @Html.LabelFor(filtroTemplateForm => filtroTemplateForm.filter.atalho)
+        @Html.TextBoxFor(filtroTemplateForm => filtroTemplateForm.filter.atalho)
+    </div>
+    <div>
+        @Html.LabelFor(filtroTemplateForm => filtroTemplateForm.filter.tipo_mensagem)
+        @Html.TextBoxFor(filtroTemplateForm => filtroTemplateForm.filter.tipo_mensagem)
+    </div>
+     <div>
+        @Html.LabelFor(filtroTemplateForm => filtroTemplateForm.options.skip)
+        @Html.TextBoxFor(filtroTemplateForm => filtroTemplateForm.options.skip)
+    </div>
+    <div>
+        @Html.LabelFor(filtroTemplateForm => filtroTemplateForm.options.limit)
+        @Html.TextBoxFor(filtroTemplateForm => filtroTemplateForm.options.limit)
+    </div>
+
+    <input type="submit" value="Enviar" />
 }
-
-
-<form method="POST" action="~/Template/templateGet">
-    
-    <label>templateGet </label>
-    <input type="submit" value="templateGet" />
-
-</form>
