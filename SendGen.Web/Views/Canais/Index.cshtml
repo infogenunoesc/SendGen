@@ -1,4 +1,4 @@
-﻿@model SendGen.Domain.OpaSuiteDomains.canaisGetFilter
+﻿@model SendGen.Domain.OpaSuiteDomains.Filtros.canaisGetFilter
 
 @using (Html.BeginForm("canaisGet", "Canais", FormMethod.Post))
 {
@@ -25,7 +25,6 @@
 </div>
 
 
-
 <div> @* Options *@
     @Html.LabelFor(filtroCanaisForm => filtroCanaisForm.options.skip)
     @Html.TextBoxFor(filtroCanaisForm => filtroCanaisForm.options.skip)
@@ -36,4 +35,6 @@
 </div>
 
     <input type="submit" value="Enviar" />
+
+    <div id="resultadoForm"></div>
 }

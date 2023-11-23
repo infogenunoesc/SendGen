@@ -1,7 +1,8 @@
-﻿@model SendGen.Domain.OpaSuiteDomains.templateGetFilter
+﻿@model SendGen.Domain.OpaSuiteDomains.Filtros.templateGetFilter
 
 @using (Html.BeginForm("templateGet", "Template", FormMethod.Post))
 {
+    <h4>Buscar Templates</h4>
     <div>
         @Html.LabelFor(filtroTemplateForm => filtroTemplateForm.filter.atalho)
         @Html.TextBoxFor(filtroTemplateForm => filtroTemplateForm.filter.atalho)
@@ -20,4 +21,6 @@
     </div>
 
     <input type="submit" value="Enviar" />
+
+    <div id="resultadoForm"></div>
 }

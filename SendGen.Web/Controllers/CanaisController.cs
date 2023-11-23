@@ -1,24 +1,26 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using Newtonsoft.Json;
-using SendGen.Domain.OpaSuiteDomains;
+using SendGen.Domain.OpaSuiteDomains.Filtros;
 using SendGen.Repository.SendGenRepositories;
 
 namespace SendGen.Web.Controllers
 {
-    // Controle dos Canais de Comunicação
+    // Controle dos Canais de Comunicação do Opa Suite
 
     public class CanaisController : Controller
     {
-        private readonly IUtilitiesRepository utilitiesRepository;
+        private readonly IUtilitiesApiRepository utilitiesApiRepository;
 
-        public CanaisController(IUtilitiesRepository utilitiesRepository)
+        public CanaisController(IUtilitiesApiRepository utilitiesApiRepository)
         {
-            this.utilitiesRepository = utilitiesRepository;
+            this.utilitiesApiRepository = utilitiesApiRepository;
         }
 
         string metodoAPI = "canal-comunicacao";
 
-        [HttpPost]
+        // Método referente ao "Canais de Comunicação - Listar canais de comunicação" da API do Opa Suite
+
+        [HttpPost] //Usado como Post por causa da form de envio via filtro JSON de um "get" do Opa Suite
         public async Task<IActionResult> canaisGet(canaisGetFilter filtroCanaisForm)
         {
             canaisGetFilter filtroCanais = new canaisGetFilter
@@ -31,7 +33,7 @@ namespace SendGen.Web.Controllers
                     canal = filtroCanaisForm.filter.canal,
                     integracao = filtroCanaisForm.filter.integracao
                 },
-                options = new optionsCanais
+                options = new options
                 {
                     skip = filtroCanaisForm.options.skip,
                     limit = filtroCanaisForm.options.limit
@@ -45,7 +47,7 @@ namespace SendGen.Web.Controllers
 
             string stringJSON = JsonConvert.SerializeObject(filtroCanais, settings);
 
-            var retorno = await utilitiesRepository.requestGetJSON(metodoAPI, stringJSON);
+            var retorno = await utilitiesApiRepository.requestGetJSON(metodoAPI, stringJSON);
 
             return retorno;
         }
@@ -72,7 +74,7 @@ namespace SendGen.Web.Controllers
                 Console.WriteLine("\n\nMétodo inválido!\n\n");
             } 
 
-            var retorno = await utilitiesRepository.requestGetURL(metodoAPI, urlAPI);
+            var retorno = await utilitiesApiRepository.requestGetURL(metodoAPI, urlAPI);
 
             return retorno;
         }

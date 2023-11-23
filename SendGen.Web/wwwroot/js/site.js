@@ -1,4 +1,20 @@
-﻿// Please see documentation at https://docs.microsoft.com/aspnet/core/client-side/bundling-and-minification
-// for details on configuring this project to bundle and minify static web assets.
+﻿// Script para renderizar os dados recebidos de form após enviado
+// Uso recomendado: <div id=resultadoForm></div>
+    $(document).ready(function () {
+        $('form').submit(function (e) {
+            e.preventDefault();
 
-// Write your JavaScript code.
+            $.ajax({
+                url: $(this).attr('action'),
+                method: $(this).attr('method'),
+                data: $(this).serialize(),
+                success: function (response) {
+                    $('#resultadoForm').html(response);
+                },
+                error: function (xhr, status, error) {
+                    console.error(xhr.responseText);
+                    $('#resultadoForm').html("Ocorreu um erro ao processar a solicitação.");
+                }
+            });
+        });
+        });
