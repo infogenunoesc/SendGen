@@ -9,7 +9,8 @@
 *.dll.config
 *.cache
 *.suo
-# Include dlls if they’re in the NuGet packages directory
+*.vsidx
+# Include dlls if theyï¿½re in the NuGet packages directory
 !/packages/*/lib/*.dll
 !/packages/*/lib/*/*.dll
 # Include dlls if they're in the CommonReferences directory
@@ -22,8 +23,9 @@ _UpgradeReport_Files/
 ###############
 # Directories #
 ###############
-bin/
-obj/
+/bin
+/obj
+.vs/
 TestResults/
 ###################
 # Web publish log #
@@ -37,7 +39,7 @@ TestResults/
 ############
 # Packages #
 ############
-# it’s better to unpack these files and commit the raw source
+# itï¿½s better to unpack these files and commit the raw source
 # git has its own built in compression methods
 *.7z
 *.dmg
@@ -73,3 +75,4 @@ _[Ss]cripts
 *.nupkg
 *.ncrunchsolution
 *.dot[Cc]over
+.vs/SendGen.Web/v17/.suo
