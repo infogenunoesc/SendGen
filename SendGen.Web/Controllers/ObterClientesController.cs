@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Mvc;
 using Microsoft.VisualBasic;
 using SendGen.Domain.SaborColonialDomains.Data;
 using SendGen.Domain.SendGenDomains.Data;
@@ -7,6 +8,7 @@ using SendGen.Repository.SendGenRepositories;
 
 namespace SendGen.Web.Controllers
 {
+    [Authorize]
     public class ObterClientesController : Controller
     {
         private readonly IClienteRepository clienteRepository;

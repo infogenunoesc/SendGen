@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
@@ -10,7 +11,8 @@ using SendGen.Repository.OpaSuiteRepositories;
 
 namespace SendGen.Web.Controllers
 {
-	public class ClientesController : Controller
+    [Authorize]
+    public class ClientesController : Controller
 	{
 		private readonly SendGenContexto _context;
 		private readonly ITemplateRepository templateRepository;
