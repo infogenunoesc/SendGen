@@ -14,7 +14,7 @@
 
 </form>
 
-
+<button type="button" class="btn btn-primary" id="enviarParaTodosSelecionados" onclick="enviarParaTodosSelecionados_Click()">Enviar para Todos Selecionados</button>
 
 <p>
 	<a asp-action="Create">Create New</a>
@@ -22,6 +22,9 @@
 <table class="table">
 	<thead>
 		<tr>
+			<th>
+
+			</th>
 			<th>
 				@Html.DisplayNameFor(model => model.Nome)
 			</th>
@@ -42,6 +45,12 @@
 		{
 			<tr>
 				<td>
+					@if (!string.IsNullOrEmpty(item.Celular.Trim()))
+					{
+						<input type="checkbox" name="clienteid" value="@item.ClienteId" />
+					}
+				</td>
+				<td>
 					@Html.DisplayFor(modelItem => item.Nome)
 				</td>
 				<td>
@@ -57,14 +66,6 @@
 					<a asp-action="Edit" asp-route-id="@item.ClienteId">Edit</a> |
 					<a asp-action="Details" asp-route-id="@item.ClienteId">Details</a> |
 					<a asp-action="Delete" asp-route-id="@item.ClienteId">Delete</a>
-
-					@if (!string.IsNullOrEmpty(item.Celular.Trim()))
-					{
-						<span> | </span>
-
-						<a href="~/Template/Selecionar?clienteid=@item.ClienteId">Enviar Mensagem</a>
-					}
-
 				</td>
 			</tr>
 		}

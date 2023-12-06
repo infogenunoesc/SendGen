@@ -1,6 +1,6 @@
 ﻿function Enviar_Click() {
     $.post("/Template/EnviarMensagem", {
-        clienteId: clienteId.value,
+        clienteIds: clienteIds.value,
         templateid: templateid.value
     }, function (ret) {
         alert(ret.mensagem);

@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "O4VA3+/CvG+BT9qWBXhXDVQVugzkvUhqIszqWNHmZwU=",
+  "Hash": "PsdwO4pxuMUUdAinA8Jsa2sQXr7ab1mD88TTFM5T4y4=",
   "Source": "SendGen.Web",
   "BasePath": "_content/SendGen.Web",
   "Mode": "Default",
@@ -2142,12 +2142,12 @@
       "OriginalItemSpec": "wwwroot\\pages\\Clientes\\Index.js"
     },
     {
-      "Identity": "C:\\Users\\Softex\\Documents\\SendGen.Web\\SendGen.Web\\wwwroot\\pages\\Template\\Index.js",
+      "Identity": "C:\\Users\\Softex\\Documents\\SendGen.Web\\SendGen.Web\\wwwroot\\pages\\Template\\Selecionar.js",
       "SourceId": "SendGen.Web",
       "SourceType": "Discovered",
       "ContentRoot": "C:\\Users\\Softex\\Documents\\SendGen.Web\\SendGen.Web\\wwwroot\\",
       "BasePath": "_content/SendGen.Web",
-      "RelativePath": "pages/Template/Index.js",
+      "RelativePath": "pages/Template/Selecionar.js",
       "AssetKind": "All",
       "AssetMode": "All",
       "AssetRole": "Primary",
@@ -2156,7 +2156,7 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\pages\\Template\\Index.js"
+      "OriginalItemSpec": "wwwroot\\pages\\Template\\Selecionar.js"
     }
   ]
 }

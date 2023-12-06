@@ -25,11 +25,11 @@ namespace SendGen.Web.Controllers
 
 
 
-		public async Task<IActionResult> Selecionar(int clienteid)
+		public async Task<IActionResult> Selecionar(string clienteIds)
 		{
 			var listaDeTemplates = await templateRepository.Get();
 			ViewData["Templates"] = new SelectList(listaDeTemplates.data, "_id", "texto");
-			ViewData["ClienteId"] = clienteid;
+			ViewData["clienteIds"] = clienteIds;
 
 			return View();
 		}
@@ -40,21 +40,25 @@ namespace SendGen.Web.Controllers
 
 
 		[HttpPost]
-		public async Task<IActionResult> EnviarMensagem(int clienteId, string templateid)
+		public async Task<IActionResult> EnviarMensagem(string clienteIds, string templateid)
 		{
-			Cliente? cliente = await contexto.Cliente.FirstOrDefaultAsync(c => c.ClienteId == clienteId);
+			List<int> arrIds = clienteIds.Split(",").Select(c => Convert.ToInt32(c)).ToList();
+			var clientes = await contexto.Cliente.Where(c => arrIds.Contains(c.ClienteId)).ToListAsync();
 
-			if (cliente == null)
+			if (clientes == null)
 			{
 				return NotFound();
 			}
 
-			if (cliente.Celular == null || cliente.Celular == "")
+			foreach (var cliente in clientes)
 			{
-				throw new Exception("O cliente informado não possuí celular cadastrado!");
-			}
+				if (cliente.Celular == null || cliente.Celular == "")
+				{
+					throw new Exception("O cliente informado não possuí celular cadastrado!");
+				}
 
-			await templateRepository.Send(cliente.Celular.Trim(), cliente.Nome!.Trim(), templateid);
+				await templateRepository.Send(cliente.Celular.Trim(), cliente.Nome!.Trim(), templateid);
+			}
 
 			return Json(new
 			{

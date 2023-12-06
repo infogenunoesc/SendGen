@@ -35,10 +35,6 @@ namespace SendGen.Repository.OpaSuiteRepositories
 			if (string.IsNullOrEmpty(nome)) throw new ArgumentNullException();
 
 
-#if DEBUG
-			telefoneCliente = "+5549999153242";
-#endif
-
 			OpaSuiteSend templateSend = new OpaSuiteSend
 			{
 				contato = new OpaSuiteContato

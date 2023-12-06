@@ -257,8 +257,8 @@
       "PackagePath": "staticwebassets\\pages\\Clientes\\Index.js"
     },
     {
-      "Id": "C:\\Users\\Softex\\Documents\\SendGen.Web\\SendGen.Web\\wwwroot\\pages\\Template\\Index.js",
-      "PackagePath": "staticwebassets\\pages\\Template\\Index.js"
+      "Id": "C:\\Users\\Softex\\Documents\\SendGen.Web\\SendGen.Web\\wwwroot\\pages\\Template\\Selecionar.js",
+      "PackagePath": "staticwebassets\\pages\\Template\\Selecionar.js"
     },
     {
       "Id": "obj\\Debug\\net7.0\\staticwebassets\\msbuild.SendGen.Web.Microsoft.AspNetCore.StaticWebAssets.props",
