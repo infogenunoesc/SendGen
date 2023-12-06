@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "0x2AXudaICAp/0QITXOPlOKW7vtPjPhFLH2xcLKcm6I=",
+  "Hash": "O4VA3+/CvG+BT9qWBXhXDVQVugzkvUhqIszqWNHmZwU=",
   "Source": "SendGen.Web",
   "BasePath": "_content/SendGen.Web",
   "Mode": "Default",
@@ -2140,6 +2140,23 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\pages\\Clientes\\Index.js"
+    },
+    {
+      "Identity": "C:\\Users\\Softex\\Documents\\SendGen.Web\\SendGen.Web\\wwwroot\\pages\\Template\\Index.js",
+      "SourceId": "SendGen.Web",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\Softex\\Documents\\SendGen.Web\\SendGen.Web\\wwwroot\\",
+      "BasePath": "_content/SendGen.Web",
+      "RelativePath": "pages/Template/Index.js",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\pages\\Template\\Index.js"
     }
   ]
 }
