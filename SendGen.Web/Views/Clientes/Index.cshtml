@@ -11,12 +11,19 @@
 
 </form>
 
+<button type="button" class="btn btn-primary" id="enviarParaTodosSelecionados" onclick="enviarParaTodosSelecionados_Click()">Enviar para Todos Selecionados</button>
+
+<p>
+
 <p class="mt-2">
 	<a asp-action="Create" class="btn btn-roxinho">Novo</a>
 </p>
 <table class="table table-hover table-bordered">
 	<thead>
 		<tr>
+			<th>
+
+			</th>
 			<th>
 				@Html.DisplayNameFor(model => model.Nome)
 			</th>
@@ -36,6 +43,12 @@
 		@foreach (var item in Model)
 		{
 			<tr>
+				<td>
+					@if (!string.IsNullOrEmpty(item.Celular.Trim()))
+					{
+						<input type="checkbox" name="clienteid" value="@item.ClienteId" />
+					}
+				</td>
 				<td>
 					@Html.DisplayFor(modelItem => item.Nome)
 				</td>

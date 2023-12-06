@@ -1,0 +1,30 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+}
+
+<div class="row">
+	<div class="col-md-4">
+		<form method="post" action="~/Template/EnviarMensagem" id="formEnviar">
+			<input type="hidden" name="clienteIds" id="clienteIds" value="@(ViewBag.clienteIds)" />
+
+
+
+
+			
+            <div class="form-group">
+                <label class="control-label">Template</label>
+				<select asp-items="@(ViewBag.Templates as SelectList)" name="templateid" id="templateid" class="form-control">
+					<option value="">Selecione...</option>
+				</select>
+            </div>
+
+
+			
+
+			<button type="button" class="btn btn-success" onclick="Enviar_Click()">Enviar</button>
+		</form>
+	</div>
+</div>
+<script src="~/pages/Template/Selecionar.js"></script>
