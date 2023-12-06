@@ -1711,3 +1711,16 @@ C:\Users\Softex\Documents\SendGen.Web\SendGen.Web\bin\Debug\net7.0\runtimes\win-
 C:\Users\Softex\Documents\SendGen.Web\SendGen.Web\bin\Debug\net7.0\runtimes\win-arm64\native\e_sqlite3.dll
 C:\Users\Softex\Documents\SendGen.Web\SendGen.Web\bin\Debug\net7.0\runtimes\win-x64\native\e_sqlite3.dll
 C:\Users\Softex\Documents\SendGen.Web\SendGen.Web\bin\Debug\net7.0\runtimes\win-x86\native\e_sqlite3.dll
+C:\Brisa\SendGen\SendGen.Web\obj\Debug\net7.0\SendGen.Web.csproj.AssemblyReference.cache
+C:\Brisa\SendGen\SendGen.Web\obj\Debug\net7.0\SendGen.Web.GeneratedMSBuildEditorConfig.editorconfig
+C:\Brisa\SendGen\SendGen.Web\obj\Debug\net7.0\SendGen.Web.AssemblyInfoInputs.cache
+C:\Brisa\SendGen\SendGen.Web\obj\Debug\net7.0\SendGen.Web.AssemblyInfo.cs
+C:\Brisa\SendGen\SendGen.Web\obj\Debug\net7.0\SendGen.Web.csproj.CoreCompileInputs.cache
+C:\Brisa\SendGen\SendGen.Web\obj\Debug\net7.0\SendGen.Web.MvcApplicationPartsAssemblyInfo.cs
+C:\Brisa\SendGen\SendGen.Web\obj\Debug\net7.0\SendGen.Web.MvcApplicationPartsAssemblyInfo.cache
+C:\Brisa\SendGen\SendGen.Web\obj\Debug\net7.0\SendGen.Web.RazorAssemblyInfo.cache
+C:\Brisa\SendGen\SendGen.Web\obj\Debug\net7.0\SendGen.Web.RazorAssemblyInfo.cs
+C:\Brisa\SendGen\SendGen.Web\obj\Debug\net7.0\SendGen.Web.sourcelink.json
+C:\Brisa\SendGen\SendGen.Web\obj\Debug\net7.0\SendGen.Web.dll
+C:\Brisa\SendGen\SendGen.Web\obj\Debug\net7.0\refint\SendGen.Web.dll
+C:\Brisa\SendGen\SendGen.Web\obj\Debug\net7.0\SendGen.Web.pdb

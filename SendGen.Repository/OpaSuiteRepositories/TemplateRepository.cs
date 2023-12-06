@@ -1,7 +1,6 @@
 using Newtonsoft.Json;
 using SendGen.Domain.OpaSuiteDomains;
 using SendGen.Domain.OpaSuiteDomains.OpaSuiteTemplate;
-using SendGen.Domain.OpaSuiteDomains;
 using System.Net.Http.Headers;
 using System.Net.Http;
 using System.Text.Json;

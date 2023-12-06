@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Softex\\Documents\\SendGen.Web\\SendGen.Web\\SendGen.Web.csproj": {}
+    "C:\\Brisa\\SendGen\\SendGen.Web\\SendGen.Web.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Softex\\Documents\\SendGen.Web\\SendGen.Domain\\SendGen.Domain.csproj": {
+    "C:\\Brisa\\SendGen\\SendGen.Domain\\SendGen.Domain.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Softex\\Documents\\SendGen.Web\\SendGen.Domain\\SendGen.Domain.csproj",
+        "projectUniqueName": "C:\\Brisa\\SendGen\\SendGen.Domain\\SendGen.Domain.csproj",
         "projectName": "SendGen.Domain",
-        "projectPath": "C:\\Users\\Softex\\Documents\\SendGen.Web\\SendGen.Domain\\SendGen.Domain.csproj",
+        "projectPath": "C:\\Brisa\\SendGen\\SendGen.Domain\\SendGen.Domain.csproj",
         "packagesPath": "C:\\Users\\Softex\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Softex\\Documents\\SendGen.Web\\SendGen.Domain\\obj\\",
+        "outputPath": "C:\\Brisa\\SendGen\\SendGen.Domain\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\Softex\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -70,23 +70,37 @@
           ],
           "assetTargetFallback": true,
           "warn": true,
+          "downloadDependencies": [
+            {
+              "name": "Microsoft.AspNetCore.App.Ref",
+              "version": "[7.0.14, 7.0.14]"
+            },
+            {
+              "name": "Microsoft.NETCore.App.Ref",
+              "version": "[7.0.14, 7.0.14]"
+            },
+            {
+              "name": "Microsoft.WindowsDesktop.App.Ref",
+              "version": "[7.0.14, 7.0.14]"
+            }
+          ],
           "frameworkReferences": {
             "Microsoft.NETCore.App": {
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.401\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.100\\RuntimeIdentifierGraph.json"
         }
       }
     },
-    "C:\\Users\\Softex\\Documents\\SendGen.Web\\SendGen.Repository\\SendGen.Repository.csproj": {
+    "C:\\Brisa\\SendGen\\SendGen.Repository\\SendGen.Repository.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Softex\\Documents\\SendGen.Web\\SendGen.Repository\\SendGen.Repository.csproj",
+        "projectUniqueName": "C:\\Brisa\\SendGen\\SendGen.Repository\\SendGen.Repository.csproj",
         "projectName": "SendGen.Repository",
-        "projectPath": "C:\\Users\\Softex\\Documents\\SendGen.Web\\SendGen.Repository\\SendGen.Repository.csproj",
+        "projectPath": "C:\\Brisa\\SendGen\\SendGen.Repository\\SendGen.Repository.csproj",
         "packagesPath": "C:\\Users\\Softex\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Softex\\Documents\\SendGen.Web\\SendGen.Repository\\obj\\",
+        "outputPath": "C:\\Brisa\\SendGen\\SendGen.Repository\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\Softex\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -103,8 +117,8 @@
           "net7.0": {
             "targetAlias": "net7.0",
             "projectReferences": {
-              "C:\\Users\\Softex\\Documents\\SendGen.Web\\SendGen.Domain\\SendGen.Domain.csproj": {
-                "projectPath": "C:\\Users\\Softex\\Documents\\SendGen.Web\\SendGen.Domain\\SendGen.Domain.csproj"
+              "C:\\Brisa\\SendGen\\SendGen.Domain\\SendGen.Domain.csproj": {
+                "projectPath": "C:\\Brisa\\SendGen\\SendGen.Domain\\SendGen.Domain.csproj"
               }
             }
           }
@@ -126,6 +140,18 @@
             "Flurl.Http": {
               "target": "Package",
               "version": "[3.2.4, )"
+            },
+            "Microsoft.AspNet.Mvc": {
+              "target": "Package",
+              "version": "[5.3.0, )"
+            },
+            "Microsoft.AspNetCore.Mvc.Abstractions": {
+              "target": "Package",
+              "version": "[2.2.0, )"
+            },
+            "Microsoft.AspNetCore.Mvc.Core": {
+              "target": "Package",
+              "version": "[2.2.5, )"
             }
           },
           "imports": [
@@ -139,23 +165,37 @@
           ],
           "assetTargetFallback": true,
           "warn": true,
+          "downloadDependencies": [
+            {
+              "name": "Microsoft.AspNetCore.App.Ref",
+              "version": "[7.0.14, 7.0.14]"
+            },
+            {
+              "name": "Microsoft.NETCore.App.Ref",
+              "version": "[7.0.14, 7.0.14]"
+            },
+            {
+              "name": "Microsoft.WindowsDesktop.App.Ref",
+              "version": "[7.0.14, 7.0.14]"
+            }
+          ],
           "frameworkReferences": {
             "Microsoft.NETCore.App": {
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.401\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.100\\RuntimeIdentifierGraph.json"
         }
       }
     },
-    "C:\\Users\\Softex\\Documents\\SendGen.Web\\SendGen.Web\\SendGen.Web.csproj": {
+    "C:\\Brisa\\SendGen\\SendGen.Web\\SendGen.Web.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Softex\\Documents\\SendGen.Web\\SendGen.Web\\SendGen.Web.csproj",
+        "projectUniqueName": "C:\\Brisa\\SendGen\\SendGen.Web\\SendGen.Web.csproj",
         "projectName": "SendGen.Web",
-        "projectPath": "C:\\Users\\Softex\\Documents\\SendGen.Web\\SendGen.Web\\SendGen.Web.csproj",
+        "projectPath": "C:\\Brisa\\SendGen\\SendGen.Web\\SendGen.Web.csproj",
         "packagesPath": "C:\\Users\\Softex\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Softex\\Documents\\SendGen.Web\\SendGen.Web\\obj\\",
+        "outputPath": "C:\\Brisa\\SendGen\\SendGen.Web\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\Softex\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -172,11 +212,11 @@
           "net7.0": {
             "targetAlias": "net7.0",
             "projectReferences": {
-              "C:\\Users\\Softex\\Documents\\SendGen.Web\\SendGen.Domain\\SendGen.Domain.csproj": {
-                "projectPath": "C:\\Users\\Softex\\Documents\\SendGen.Web\\SendGen.Domain\\SendGen.Domain.csproj"
+              "C:\\Brisa\\SendGen\\SendGen.Domain\\SendGen.Domain.csproj": {
+                "projectPath": "C:\\Brisa\\SendGen\\SendGen.Domain\\SendGen.Domain.csproj"
               },
-              "C:\\Users\\Softex\\Documents\\SendGen.Web\\SendGen.Repository\\SendGen.Repository.csproj": {
-                "projectPath": "C:\\Users\\Softex\\Documents\\SendGen.Web\\SendGen.Repository\\SendGen.Repository.csproj"
+              "C:\\Brisa\\SendGen\\SendGen.Repository\\SendGen.Repository.csproj": {
+                "projectPath": "C:\\Brisa\\SendGen\\SendGen.Repository\\SendGen.Repository.csproj"
               }
             }
           }
@@ -247,6 +287,24 @@
           ],
           "assetTargetFallback": true,
           "warn": true,
+          "downloadDependencies": [
+            {
+              "name": "Microsoft.AspNetCore.App.Ref",
+              "version": "[7.0.14, 7.0.14]"
+            },
+            {
+              "name": "Microsoft.NETCore.App.Host.win-x64",
+              "version": "[7.0.14, 7.0.14]"
+            },
+            {
+              "name": "Microsoft.NETCore.App.Ref",
+              "version": "[7.0.14, 7.0.14]"
+            },
+            {
+              "name": "Microsoft.WindowsDesktop.App.Ref",
+              "version": "[7.0.14, 7.0.14]"
+            }
+          ],
           "frameworkReferences": {
             "Microsoft.AspNetCore.App": {
               "privateAssets": "none"
@@ -255,7 +313,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.401\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.100\\RuntimeIdentifierGraph.json"
         }
       }
     }
