@@ -1,10 +1,6 @@
-using Newtonsoft.Json;
+﻿using Newtonsoft.Json;
 using SendGen.Domain.OpaSuiteDomains;
 using SendGen.Domain.OpaSuiteDomains.OpaSuiteTemplate;
-using System.Net.Http.Headers;
-using System.Net.Http;
-using System.Text.Json;
-using Microsoft.AspNetCore.Mvc;
 
 namespace SendGen.Repository.OpaSuiteRepositories
 {
@@ -87,7 +83,5 @@ namespace SendGen.Repository.OpaSuiteRepositories
 
 			Console.WriteLine(await response.Content.ReadAsStringAsync());
 		}
-
-
-    }
+	}
 }

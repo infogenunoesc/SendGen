@@ -4,20 +4,18 @@
 	ViewData["Title"] = "Clientes";
 }
 
+<button type="button" class="btn btn-primary" id="enviarParaTodosSelecionados" onclick="enviarParaTodosSelecionados_Click()">Enviar para Todos Selecionados</button>
+
+<p class="mt-2 text-end">
+	<a asp-action="Create" class="btn btn-roxinho">Novo</a>
+</p>
+
 <form method="get" id="formPesquisar">
 
-	<label>Mostrar omente com Telefone</label>
+	<label>Mostrar somente com telefone cadastrado?</label>
 	<input type="checkbox" name="somenteComTelefone" onchange="formPesquisar.submit()" value="true" @((bool)ViewBag.SomenteComTelefone ? "checked" : "") />
 
 </form>
-
-<button type="button" class="btn btn-primary" id="enviarParaTodosSelecionados" onclick="enviarParaTodosSelecionados_Click()">Enviar para Todos Selecionados</button>
-
-<p>
-
-<p class="mt-2">
-	<a asp-action="Create" class="btn btn-roxinho">Novo</a>
-</p>
 <table class="table table-hover table-bordered">
 	<thead>
 		<tr>
@@ -61,18 +59,10 @@
 				<td>
 					@Html.DisplayFor(modelItem => item.TraCod)
 				</td>
-				<td>
+				<td class="text-center">
 					<a class="btn btn-light" asp-action="Edit" asp-route-id="@item.ClienteId">Editar</a> |
 					<a class="btn btn-light" asp-action="Details" asp-route-id="@item.ClienteId">Visualizar</a> |
 					<a class="btn btn-light" asp-action="Delete" asp-route-id="@item.ClienteId">Apagar</a>
-
-					@if (!string.IsNullOrEmpty(item.Celular.Trim()))
-					{
-						<span> | </span>
-
-						<a class="btn btn-info" href="#" onclick="Enviar_Click(@item.ClienteId)">Enviar Mensagem</a>
-					}
-
 				</td>
 			</tr>
 		}

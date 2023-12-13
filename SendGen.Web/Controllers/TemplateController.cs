@@ -11,7 +11,7 @@ namespace SendGen.Web.Controllers
 		// Declaração de membros privados para o contexto do banco de dados e o repositório de templates
 		private readonly SendGenContexto contexto;
 		private readonly ITemplateRepository templateRepository;
-
+		
 		// Construtor que realiza a injeção de dependências para o contexto e o repositório
 		public TemplateController(
 

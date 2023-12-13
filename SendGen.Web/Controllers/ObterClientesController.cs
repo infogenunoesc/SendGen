@@ -29,7 +29,8 @@ namespace SendGen.Web.Controllers
         }
 
 		// Ação que processa a obtenção e processamento de clientes
-        [HttpPost]
+
+		[HttpPost]
         public IActionResult Processar()
         {
 			// Cria uma instância do repositório de transacionadores

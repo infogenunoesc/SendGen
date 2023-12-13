@@ -51,6 +51,7 @@ namespace SendGen.Web.Controllers
 			ViewData["SomenteComTelefone"] = somenteComTelefone;
 
 			// Retorna a view com a lista de clientes
+
 			return View(await listaClientes.ToListAsync());
 		}
 

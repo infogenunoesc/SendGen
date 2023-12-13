@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Brisa\\SendGen\\SendGen.Web\\SendGen.Web.csproj": {}
+    "C:\\Users\\Softex\\Desktop\\Do Vande\\SendGen.Web\\SendGen.Web\\SendGen.Web.csproj": {}
   },
   "projects": {
-    "C:\\Brisa\\SendGen\\SendGen.Domain\\SendGen.Domain.csproj": {
+    "C:\\Users\\Softex\\Desktop\\Do Vande\\SendGen.Web\\SendGen.Domain\\SendGen.Domain.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Brisa\\SendGen\\SendGen.Domain\\SendGen.Domain.csproj",
+        "projectUniqueName": "C:\\Users\\Softex\\Desktop\\Do Vande\\SendGen.Web\\SendGen.Domain\\SendGen.Domain.csproj",
         "projectName": "SendGen.Domain",
-        "projectPath": "C:\\Brisa\\SendGen\\SendGen.Domain\\SendGen.Domain.csproj",
+        "projectPath": "C:\\Users\\Softex\\Desktop\\Do Vande\\SendGen.Web\\SendGen.Domain\\SendGen.Domain.csproj",
         "packagesPath": "C:\\Users\\Softex\\.nuget\\packages\\",
-        "outputPath": "C:\\Brisa\\SendGen\\SendGen.Domain\\obj\\",
+        "outputPath": "C:\\Users\\Softex\\Desktop\\Do Vande\\SendGen.Web\\SendGen.Domain\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\Softex\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -93,14 +93,14 @@
         }
       }
     },
-    "C:\\Brisa\\SendGen\\SendGen.Repository\\SendGen.Repository.csproj": {
+    "C:\\Users\\Softex\\Desktop\\Do Vande\\SendGen.Web\\SendGen.Repository\\SendGen.Repository.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Brisa\\SendGen\\SendGen.Repository\\SendGen.Repository.csproj",
+        "projectUniqueName": "C:\\Users\\Softex\\Desktop\\Do Vande\\SendGen.Web\\SendGen.Repository\\SendGen.Repository.csproj",
         "projectName": "SendGen.Repository",
-        "projectPath": "C:\\Brisa\\SendGen\\SendGen.Repository\\SendGen.Repository.csproj",
+        "projectPath": "C:\\Users\\Softex\\Desktop\\Do Vande\\SendGen.Web\\SendGen.Repository\\SendGen.Repository.csproj",
         "packagesPath": "C:\\Users\\Softex\\.nuget\\packages\\",
-        "outputPath": "C:\\Brisa\\SendGen\\SendGen.Repository\\obj\\",
+        "outputPath": "C:\\Users\\Softex\\Desktop\\Do Vande\\SendGen.Web\\SendGen.Repository\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\Softex\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -117,8 +117,8 @@
           "net7.0": {
             "targetAlias": "net7.0",
             "projectReferences": {
-              "C:\\Brisa\\SendGen\\SendGen.Domain\\SendGen.Domain.csproj": {
-                "projectPath": "C:\\Brisa\\SendGen\\SendGen.Domain\\SendGen.Domain.csproj"
+              "C:\\Users\\Softex\\Desktop\\Do Vande\\SendGen.Web\\SendGen.Domain\\SendGen.Domain.csproj": {
+                "projectPath": "C:\\Users\\Softex\\Desktop\\Do Vande\\SendGen.Web\\SendGen.Domain\\SendGen.Domain.csproj"
               }
             }
           }
@@ -140,18 +140,6 @@
             "Flurl.Http": {
               "target": "Package",
               "version": "[3.2.4, )"
-            },
-            "Microsoft.AspNet.Mvc": {
-              "target": "Package",
-              "version": "[5.3.0, )"
-            },
-            "Microsoft.AspNetCore.Mvc.Abstractions": {
-              "target": "Package",
-              "version": "[2.2.0, )"
-            },
-            "Microsoft.AspNetCore.Mvc.Core": {
-              "target": "Package",
-              "version": "[2.2.5, )"
             }
           },
           "imports": [
@@ -188,14 +176,14 @@
         }
       }
     },
-    "C:\\Brisa\\SendGen\\SendGen.Web\\SendGen.Web.csproj": {
+    "C:\\Users\\Softex\\Desktop\\Do Vande\\SendGen.Web\\SendGen.Web\\SendGen.Web.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Brisa\\SendGen\\SendGen.Web\\SendGen.Web.csproj",
+        "projectUniqueName": "C:\\Users\\Softex\\Desktop\\Do Vande\\SendGen.Web\\SendGen.Web\\SendGen.Web.csproj",
         "projectName": "SendGen.Web",
-        "projectPath": "C:\\Brisa\\SendGen\\SendGen.Web\\SendGen.Web.csproj",
+        "projectPath": "C:\\Users\\Softex\\Desktop\\Do Vande\\SendGen.Web\\SendGen.Web\\SendGen.Web.csproj",
         "packagesPath": "C:\\Users\\Softex\\.nuget\\packages\\",
-        "outputPath": "C:\\Brisa\\SendGen\\SendGen.Web\\obj\\",
+        "outputPath": "C:\\Users\\Softex\\Desktop\\Do Vande\\SendGen.Web\\SendGen.Web\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\Softex\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -212,11 +200,11 @@
           "net7.0": {
             "targetAlias": "net7.0",
             "projectReferences": {
-              "C:\\Brisa\\SendGen\\SendGen.Domain\\SendGen.Domain.csproj": {
-                "projectPath": "C:\\Brisa\\SendGen\\SendGen.Domain\\SendGen.Domain.csproj"
+              "C:\\Users\\Softex\\Desktop\\Do Vande\\SendGen.Web\\SendGen.Domain\\SendGen.Domain.csproj": {
+                "projectPath": "C:\\Users\\Softex\\Desktop\\Do Vande\\SendGen.Web\\SendGen.Domain\\SendGen.Domain.csproj"
               },
-              "C:\\Brisa\\SendGen\\SendGen.Repository\\SendGen.Repository.csproj": {
-                "projectPath": "C:\\Brisa\\SendGen\\SendGen.Repository\\SendGen.Repository.csproj"
+              "C:\\Users\\Softex\\Desktop\\Do Vande\\SendGen.Web\\SendGen.Repository\\SendGen.Repository.csproj": {
+                "projectPath": "C:\\Users\\Softex\\Desktop\\Do Vande\\SendGen.Web\\SendGen.Repository\\SendGen.Repository.csproj"
               }
             }
           }
