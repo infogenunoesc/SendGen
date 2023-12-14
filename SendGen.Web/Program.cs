@@ -42,8 +42,6 @@ builder.Services.AddDefaultIdentity<IdentityUser>(options =>
 builder.Services.AddScoped<IClienteRepository, ClienteRepository>();
 // OpaSuite
 builder.Services.AddScoped<ITemplateRepository, TemplateRepository>();
-//Utilidades
-builder.Services.AddScoped<IUtilitiesRepository, UtilitiesRepository>();
 
 
 

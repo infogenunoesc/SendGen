@@ -15,7 +15,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("SendGen.Web")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+7fcc395a15d5c8372bdad5a985058bd46b2790e8")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0")]
 [assembly: System.Reflection.AssemblyProductAttribute("SendGen.Web")]
 [assembly: System.Reflection.AssemblyTitleAttribute("SendGen.Web")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

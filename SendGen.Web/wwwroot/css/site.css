@@ -34,7 +34,17 @@ body {
     color: white;
 }
 
-.btn-roxinho:hover {
-    background-color: #9E4764;
-    color: lightgray;
+    .btn-roxinho:hover {
+        background-color: #9E4764;
+        color: lightgray;
+    }
+
+.btn-laranjinha {
+    background-color: #FA4D3E;
+    color: white;
 }
+
+    .btn-laranjinha:hover {
+        background-color: #FA4D3E;
+        color: lightgray;
+    }
