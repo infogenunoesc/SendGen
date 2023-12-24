@@ -3,7 +3,7 @@ using Newtonsoft.Json;
 using SendGen.Domain.OpaSuiteDomains.Filtros;
 using SendGen.Repository.SendGenRepositories;
 
-namespace SendGen.Web.Controllers
+namespace SendGen.Web.Controllers.API
 {
     // Controle dos Canais de Comunicação do Opa Suite
 
@@ -64,24 +64,23 @@ namespace SendGen.Web.Controllers
 
             var urlAPI = canalID;
 
-            if (metodo == "CanalTemplate") {
+            if (metodo == "CanalTemplate")
+            {
                 urlAPI += "/template";
-            } else if (metodo == "CanalTemplateLimite")
+            }
+            else if (metodo == "CanalTemplateLimite")
             {
                 urlAPI += "/template/limites-diarios-envio";
-            } else if (metodo != "CanalID")
+            }
+            else if (metodo != "CanalID")
             {
                 Console.WriteLine("\n\nMétodo inválido!\n\n");
-            } 
+            }
 
             var retorno = await utilitiesApiRepository.requestGetURL(metodoAPI, urlAPI);
 
             return retorno;
         }
 
-        public IActionResult Index()
-        {
-            return View();
-        }
     }
 }

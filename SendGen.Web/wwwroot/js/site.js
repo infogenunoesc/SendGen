@@ -17,4 +17,9 @@
                 }
             });
         });
+
+        $('#enviarForm').click(function () {
+            $('#form').submit();
         });
+
+    });

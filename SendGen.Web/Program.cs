@@ -1,9 +1,11 @@
+using Microsoft.AspNetCore.Hosting;
 using Microsoft.EntityFrameworkCore;
 using SendGen.Domain.SendGenDomains.Data;
 using SendGen.Repository.OpaSuiteRepositories;
 using SendGen.Repository.SendGenRepositories;
 
 var builder = WebApplication.CreateBuilder(args);
+
 
 
 var connectionString = builder.Configuration.GetConnectionString("DefaultConnection") ?? throw new InvalidOperationException("Connection string 'DefaultConnection' not found.");
@@ -31,6 +33,7 @@ if (!app.Environment.IsDevelopment())
     // The default HSTS value is 30 days. You may want to change this for production scenarios, see https://aka.ms/aspnetcore-hsts.
     app.UseHsts();
 }
+
 
 
 app.UseHttpsRedirection();

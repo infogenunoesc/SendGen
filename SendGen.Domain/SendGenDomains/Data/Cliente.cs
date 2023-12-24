@@ -7,7 +7,6 @@
         public string? Nome { get; set; }
         public string? Celular { get; set; }
         public DateTime? DataNascimento { get; set; }
-
         public int TraCod { get; set; }
-    }
+	}
 }

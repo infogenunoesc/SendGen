@@ -1,0 +1,61 @@
+﻿@model IEnumerable<SendGen.Domain.SendGenDomains.Data.Cliente>
+
+@{
+	ViewData["Title"] = "Automação";
+}
+
+<h1>Automação</h1>
+
+
+<p>
+	<a asp-action="Create">Create New</a>
+</p>
+
+
+
+<table class="table">
+	<thead>
+		<tr>
+			<th>
+				@Html.DisplayNameFor(model => model.Nome)
+			</th>
+			<th>
+				@Html.DisplayNameFor(model => model.Celular)
+			</th>
+			<th>
+				@Html.DisplayNameFor(model => model.DataNascimento)
+			</th>
+			<th>
+				@Html.DisplayNameFor(model => model.TraCod)
+			</th>
+			<th></th>
+		</tr>
+	</thead>
+	<tbody>
+		@if (Model != null)
+		{
+			foreach (var item in Model)
+			{
+				<tr>
+					<td>
+						@Html.DisplayFor(modelItem => item.Nome)
+					</td>
+					<td>
+						@Html.DisplayFor(modelItem => item.Celular)
+					</td>
+					<td>
+						@(item.DataNascimento?.ToString("dd/MM/yyyy"))
+					</td>
+					<td>
+						@Html.DisplayFor(modelItem => item.TraCod)
+					</td>
+					<td>
+
+
+					</td>
+				</tr>
+			}
+		}
+	</tbody>
+</table>
+

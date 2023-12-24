@@ -1,0 +1,53 @@
+﻿@model IEnumerable<SendGen.Domain.SendGenDomains.Data.Cliente>
+
+@{
+    ViewData["Title"] = "Criar Filtro";
+}
+
+<h3>Select * from cliente</h3>
+
+<form method="get" id="formPesquisar">
+	<input type="hidden" name="enviado" value="true" />
+	Find by name: @Html.TextBox("SearchString", ViewBag.CurrentFilter as string)
+
+	<button type="submit" value="true" onclick="formPesquisar.submit()" ) />Pesquisar</button>
+</form>
+
+<form method="post" id="formCondicao" asp-action="Salvar">
+	<input type="hidden" id="condicao" name="condicao" value="@ViewBag.CurrentFilter" />
+	<button type="submit" id="salvarCondicao" onlick="formCondicao.submit()" value="true" />Salvar</button>
+</form>
+
+@if (ViewBag.Salvo == true) {
+	<p>Filtro salvo com sucesso!</p>
+}
+
+<table class="table">
+	<thead>
+		<tr>
+			<th>
+				@Html.DisplayNameFor(model => model.Nome)
+			</th>
+			<th>
+				@Html.DisplayNameFor(model => model.ClienteId)
+			</th>
+			<th></th>
+		</tr>
+	</thead>
+	<tbody>
+		@foreach (var item in Model)
+		{
+			<tr>
+				<td>
+					@Html.DisplayFor(modelItem => item.Nome)
+				</td>
+				<td>
+					@Html.DisplayFor(modelItem => item.ClienteId)
+				</td>
+			</tr>
+		}
+	</tbody>
+</table>
+
+<script src="~/js/site.js"></script>
+           

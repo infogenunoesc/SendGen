@@ -3,7 +3,7 @@ using Newtonsoft.Json;
 using SendGen.Domain.OpaSuiteDomains.Filtros;
 using SendGen.Repository.SendGenRepositories;
 
-namespace SendGen.Web.Controllers
+namespace SendGen.Web.Controllers.API
 {
     // Controller dos Atendimentos e Mensagens do Atendimento do Opa Suite 
 
@@ -116,9 +116,5 @@ namespace SendGen.Web.Controllers
         }
 
 
-        public IActionResult Index()
-        {
-            return View();
-        }
     }
 }

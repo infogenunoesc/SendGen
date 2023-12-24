@@ -46,6 +46,23 @@ namespace SendGen.Domain.Migrations
 
                     b.ToTable("Cliente");
                 });
+
+            modelBuilder.Entity("SendGen.Domain.SendGenDomains.Data.FiltroDB", b =>
+                {
+                    b.Property<int>("ID")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("ID"));
+
+                    b.Property<string>("Condicao")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("ID");
+
+                    b.ToTable("FiltroDB");
+                });
 #pragma warning restore 612, 618
         }
     }

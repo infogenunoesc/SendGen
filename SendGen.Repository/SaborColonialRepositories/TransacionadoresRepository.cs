@@ -9,7 +9,7 @@ namespace SendGen.Repository.SaborColonialRepositories
 
         public List<Transacionadores> ObterClientes()
         {
-            string connectionString = "Server=localhost; Database=SaborColonial; Integrated Security=True;TrustServerCertificate=True;";
+            string connectionString = "Server=DESKTOP-H95BSF0\\SQLEXPRESS; Database=SaborColonial; Integrated Security=True;TrustServerCertificate=True;";
 
             // Inicializa a conexão
             using (var con = new SqlConnection(connectionString))

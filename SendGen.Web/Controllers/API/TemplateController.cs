@@ -3,7 +3,7 @@ using Newtonsoft.Json;
 using SendGen.Domain.OpaSuiteDomains.Filtros;
 using SendGen.Repository.SendGenRepositories;
 
-namespace SendGen.Web.Controllers;
+namespace SendGen.Web.Controllers.API;
 
 // Controle dos Templates do Opa Suite
 public class TemplateController : Controller
@@ -65,8 +65,4 @@ public class TemplateController : Controller
     }
 
 
-    public IActionResult Index()
-    {
-        return View();
-    }
 }
