@@ -1,4 +1,7 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using Newtonsoft.Json;
+using SendGen.Domain.OpaSuiteDomains.DataResultModels;
+using SendGen.Domain.SendGenDomains.Data;
 using System.Net.Http.Headers;
 
 namespace SendGen.Repository.SendGenRepositories
@@ -50,6 +53,38 @@ namespace SendGen.Repository.SendGenRepositories
             // Console.WriteLine(retorno);
             return new OkObjectResult(retorno);
         }
+
+        public List<T> IActionResultToList<T>(IActionResult objeto) where T : class
+        {
+            List<T> resposta = null;
+
+            try
+            {
+                if (objeto is OkObjectResult okObjectResult)
+                {
+                    var value = okObjectResult.Value;
+
+                    if (value != null)
+                    {
+                        var valueString = value.ToString();
+
+                        var responseObject = JsonConvert.DeserializeObject<RespostaAPI<T>>(valueString);
+
+                        if (responseObject != null)
+                        {
+                            resposta = responseObject.data;
+                        }
+                    }
+                }
+            }
+            catch (JsonException e)
+            {
+                Console.WriteLine($"Erro ao desserializar o JSON: {e.Message}");
+            }
+
+            return resposta;
+        }
+
 
     }
 }

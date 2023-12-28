@@ -1,5 +1,6 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using Newtonsoft.Json;
+using SendGen.Domain.OpaSuiteDomains.DataResultModels;
 using SendGen.Domain.OpaSuiteDomains.Filtros;
 using SendGen.Repository.SendGenRepositories;
 
@@ -9,15 +10,14 @@ namespace SendGen.Web.Controllers.API
 
     public class AtendimentosController : Controller
     {
-        private readonly IUtilitiesApiRepository utilitiesApiRepository;
+        private readonly IUtilitiesApiRepository _utilitiesApiRepository;
 
         public AtendimentosController(IUtilitiesApiRepository utilitiesApiRepository)
         {
-            this.utilitiesApiRepository = utilitiesApiRepository;
+            _utilitiesApiRepository = utilitiesApiRepository;
         }
 
         string metodoAPI = "atendimento";
-
 
         // Método referente ao "Atendimentos - Listar atendimentos" da API do Opa Suite
 
@@ -46,9 +46,15 @@ namespace SendGen.Web.Controllers.API
                 NullValueHandling = NullValueHandling.Ignore
             };
 
+
             string stringJSON = JsonConvert.SerializeObject(filtroAtendimentos, settings);
 
-            var retorno = await utilitiesApiRepository.requestGetJSON(metodoAPI, stringJSON);
+            Console.WriteLine(stringJSON);
+
+            var retorno = await _utilitiesApiRepository.requestGetJSON(metodoAPI, stringJSON);
+
+            List<TemplateGetData> resposta = _utilitiesApiRepository.IActionResultToList<TemplateGetData>(retorno);
+
 
             return retorno;
         }
@@ -62,7 +68,7 @@ namespace SendGen.Web.Controllers.API
                 return BadRequest("É necessário informar o ID de um canal de comunicação.");
             }
 
-            var retorno = await utilitiesApiRepository.requestGetURL(metodoAPI, atendimentoID);
+            var retorno = await _utilitiesApiRepository.requestGetURL(metodoAPI, atendimentoID);
 
             return retorno;
         }
@@ -96,7 +102,7 @@ namespace SendGen.Web.Controllers.API
 
             string stringJSON = JsonConvert.SerializeObject(filtroMensagensAtendimento, settings);
 
-            var retorno = await utilitiesApiRepository.requestGetJSON(metodoAPI + "/mensagem", stringJSON);
+            var retorno = await _utilitiesApiRepository.requestGetJSON(metodoAPI + "/mensagem", stringJSON);
 
             return retorno;
         }
@@ -110,7 +116,7 @@ namespace SendGen.Web.Controllers.API
                 return BadRequest("É necessário informar o ID de um canal de comunicação.");
             }
 
-            var retorno = await utilitiesApiRepository.requestGetURL(metodoAPI + "/mensagem", mensagensAtendimentoID);
+            var retorno = await _utilitiesApiRepository.requestGetURL(metodoAPI + "/mensagem", mensagensAtendimentoID);
 
             return retorno;
         }

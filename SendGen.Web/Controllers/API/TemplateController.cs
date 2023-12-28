@@ -1,6 +1,9 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using Newtonsoft.Json;
+using SendGen.Domain.OpaSuiteDomains.DataResultModels;
+using SendGen.Domain.OpaSuiteDomains;
 using SendGen.Domain.OpaSuiteDomains.Filtros;
+using SendGen.Domain.SendGenDomains.Data;
 using SendGen.Repository.SendGenRepositories;
 
 namespace SendGen.Web.Controllers.API;
@@ -8,32 +11,31 @@ namespace SendGen.Web.Controllers.API;
 // Controle dos Templates do Opa Suite
 public class TemplateController : Controller
 {
-    private readonly IUtilitiesApiRepository utilitiesApiRepository;
+    private readonly IUtilitiesApiRepository _utilitiesApiRepository;
 
     public TemplateController(IUtilitiesApiRepository utilitiesApiRepository)
     {
-        this.utilitiesApiRepository = utilitiesApiRepository;
+        _utilitiesApiRepository = utilitiesApiRepository;
     }
 
     string metodoAPI = "template";
 
-    // Método referente ao "Template - Listar templates" da API do Opa Suite
+        // Método referente ao "Template - Listar templates" da API do Opa Suite
 
-    [HttpPost] //Usado como Post por causa da form de envio via filtro JSON de um "get" do Opa Suite
-    public async Task<IActionResult> templateGet(templateGetFilter filtroTemplateForm) //Recebe os dados via um objeto com os dados do filtro
+        [HttpPost] //Usado como Post por causa da form de envio via filtro JSON de um "get" do Opa Suite
+    public async Task<List<TemplateGetData>> templateGet(string? atalho, string? tipoMensagem, int? skip, int? limit) //Recebe o filtro e retorna uma lista, caso existir algum elemento
     {
-        //Especificando o filtro
-        templateGetFilter filtroTemplate = new templateGetFilter
+         templateGetFilter filtroTemplate = new templateGetFilter
         {
             filter = new filterTemplate
             {
-                atalho = filtroTemplateForm.filter.atalho,
-                tipo_mensagem = filtroTemplateForm.filter.tipo_mensagem
+                atalho = atalho,
+                tipo_mensagem = tipoMensagem
             },
             options = new options
             {
-                skip = filtroTemplateForm.options.skip,
-                limit = filtroTemplateForm.options.limit
+                skip = skip,
+                limit = limit
             }
         };
 
@@ -44,22 +46,26 @@ public class TemplateController : Controller
 
         string stringJSON = JsonConvert.SerializeObject(filtroTemplate, settings);
 
-        var retorno = await utilitiesApiRepository.requestGetJSON(metodoAPI, stringJSON);
+        Console.WriteLine(stringJSON);
 
-        return retorno;
+        var retorno = await _utilitiesApiRepository.requestGetJSON(metodoAPI, stringJSON);
+
+        List<TemplateGetData> resposta = _utilitiesApiRepository.IActionResultToList<TemplateGetData>(retorno);
+
+        return resposta;
     }
 
     // Método referente ao "Template - Buscar template populado" da API do Opa Suite
 
     [HttpGet]
-    public async Task<IActionResult> templateGetID(string templateID)
+    public async Task<IActionResult> templateGetID(int templateID)
     {
-        if (templateID == null || templateID.Length == 0)
+        if (templateID == null)
         {
             return BadRequest("É necessário informar o ID de uma template.");
         }
 
-        var retorno = await utilitiesApiRepository.requestGetURL(metodoAPI, templateID);
+        var retorno = await _utilitiesApiRepository.requestGetURL(metodoAPI, templateID.ToString());
 
         return retorno;
     }

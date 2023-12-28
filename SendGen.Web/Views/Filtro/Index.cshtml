@@ -1,0 +1,48 @@
+﻿@model IEnumerable<SendGen.Domain.SendGenDomains.Data.FiltroDB>
+
+@{
+	ViewData["Title"] = "Filtros";
+}
+
+<h2>Filtros</h2>
+
+<p>
+	<a asp-action="Create">Criar filtro</a>
+</p>
+
+<table class="table">
+	<thead>
+		<tr>
+			<th>
+				@Html.DisplayNameFor(model => model.ID)
+			</th>
+			<th>
+				@Html.DisplayNameFor(model => model.Condicao)
+			</th>
+			<th></th>
+		</tr>
+	</thead>
+	<tbody>
+		@if (Model != null && Model.Any())
+		{
+			foreach (var item in Model)
+			{
+				<tr>
+					<td>
+						@Html.DisplayFor(modelItem => item.ID)
+					</td>
+					<td>
+						@Html.DisplayFor(modelItem => item.Condicao)
+					</td>
+					<td>
+						<a asp-action="Agendamento" asp-route-filtroID="@item.ID">Agendar</a> 
+
+					</td>
+					<td></td>
+				</tr>
+
+			}
+		}
+	</tbody>
+</table>
+

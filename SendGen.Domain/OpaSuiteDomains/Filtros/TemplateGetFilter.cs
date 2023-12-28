@@ -12,3 +12,4 @@ public class templateGetFilter
     public filterTemplate? filter { get; set; }
     public options? options { get; set; }
 }
+

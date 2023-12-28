@@ -6,6 +6,7 @@ namespace SendGen.Repository.SendGenRepositories
     {
         public Task<IActionResult> requestGetJSON(string metodoAPI, string contentJSON);
         public Task<IActionResult> requestGetURL(string metodoAPI, string id);
+        public List<T> IActionResultToList<T>(IActionResult objeto) where T : class;
     }
 
 

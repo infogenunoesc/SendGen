@@ -1,0 +1,188 @@
+﻿@model SendGen.Web.Models.FiltroAgendamentoView
+
+@{
+	ViewData["Title"] = "Agendamento";
+}
+
+<h2>Agendamento</h2>
+
+<h4>Filtro</h4>
+
+<table class="table">
+
+    <thead>
+        <tr>
+            <td>
+                @Html.DisplayNameFor(model => model.Filtro.ID)
+            </td>
+            <td>
+                @Html.DisplayNameFor(model => model.Filtro.Condicao)
+            </td>
+            <td></td>
+        </tr>
+    </thead>
+    <tbody>
+
+        <tr>
+            <td>
+                @Html.DisplayFor(model => model.Filtro.ID)
+            </td>
+            <td>
+                @Html.DisplayFor(model => model.Filtro.Condicao)
+            </td>
+            <td></td>
+        </tr>
+        
+
+    </tbody>
+</table>
+<h4>Template</h4>
+
+<table class="table">
+
+    <thead>
+        <tr>
+            <td>
+                @Html.DisplayNameFor(model => model.Templates[0]._id)
+            </td>
+            <td>
+                    @Html.DisplayNameFor(model => model.Templates[0].texto)
+            </td>
+            <td>
+                    @Html.DisplayNameFor(model => model.Templates[0].atalho)
+            </td>
+            <td>
+                    @Html.DisplayNameFor(model => model.Templates[0].tipo_mensagem)
+            </td>
+            <td>
+                    @Html.DisplayNameFor(model => model.Templates[0].departamentos)
+            </td>
+            <td></td>
+        </tr>
+    </thead>
+    <tbody>
+
+        @foreach (var item in Model.Templates)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item._id)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.texto)
+                </td>
+                <td>
+                        @Html.DisplayFor(modelItem => item.atalho)
+                </td>
+                <td>
+                        @Html.DisplayFor(modelItem => item.tipo_mensagem)
+                </td>
+                <td>
+                        @foreach (var departamento in item.departamentos)
+                        {
+                            <span>@departamento</span> 
+                        }
+                </td>
+                <td></td>
+            </tr>
+        }
+
+    </tbody>
+</table>
+
+<h4>Canal de Comunicação</h4>
+
+    <table class="table">
+
+        <thead>
+        <tr>
+            <td>
+                @Html.DisplayNameFor(model => model.Canais[0]._id)
+            </td>
+            <td>
+                @Html.DisplayNameFor(model => model.Canais[0].nome)
+            </td>
+            <td>
+                @Html.DisplayNameFor(model => model.Canais[0].id_atendente)
+            </td>
+            <td>
+                @Html.DisplayNameFor(model => model.Canais[0].status)
+            </td>
+            <td>
+                @Html.DisplayNameFor(model => model.Canais[0].canal)
+            </td>
+            <td>
+                @Html.DisplayNameFor(model => model.Canais[0].integracao)
+            </td>
+            <td>
+                @Html.DisplayNameFor(model => model.Canais[0].prioridadeListagemAtendimentos)
+            </td>
+            <td></td>
+        </tr>
+        </thead>
+	    <tbody>
+
+            @foreach (var item in Model.Canais)
+            {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item._id)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.nome)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.id_atendente)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.status)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.canal)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.integracao)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.prioridadeListagemAtendimentos)
+                </td>
+                <td></td>
+            </tr>
+            }
+            		
+	    </tbody>
+    </table>
+
+<h4>Frequência</h4>
+
+
+<h4>Clientes</h4>
+
+<table class="table">
+    <thead>
+        <tr>
+            <td>
+                @Html.DisplayNameFor(model => model.Clientes.FirstOrDefault().ClienteId)
+            </td>
+            <td>
+                @Html.DisplayNameFor(model => model.Clientes.FirstOrDefault().Nome)
+            </td>
+
+            <td></td>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model.Clientes)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.ClienteId)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Nome)
+                </td>
+                <td></td>
+            </tr>
+        }
+    </tbody>
+</table>

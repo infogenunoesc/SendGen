@@ -7,7 +7,7 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Compile Remove="Views\Automacao\Create.cshtml.cs" />
+    <Compile Remove="Views\Filtro\Create.cshtml.cs" />
   </ItemGroup>
 
   <ItemGroup>

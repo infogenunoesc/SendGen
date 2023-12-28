@@ -21,6 +21,7 @@ builder.Services.AddScoped<ITemplateRepository, TemplateRepository>();
 builder.Services.AddScoped<IUtilitiesApiRepository, UtilitiesApiRepository>();
 
 
+
 // Add services to the container.
 builder.Services.AddControllersWithViews();
 

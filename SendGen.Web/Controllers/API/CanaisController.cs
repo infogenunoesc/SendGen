@@ -1,5 +1,6 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using Newtonsoft.Json;
+using SendGen.Domain.OpaSuiteDomains.DataResultModels;
 using SendGen.Domain.OpaSuiteDomains.Filtros;
 using SendGen.Repository.SendGenRepositories;
 
@@ -9,11 +10,11 @@ namespace SendGen.Web.Controllers.API
 
     public class CanaisController : Controller
     {
-        private readonly IUtilitiesApiRepository utilitiesApiRepository;
+        private readonly IUtilitiesApiRepository _utilitiesApiRepository;
 
         public CanaisController(IUtilitiesApiRepository utilitiesApiRepository)
         {
-            this.utilitiesApiRepository = utilitiesApiRepository;
+            _utilitiesApiRepository = utilitiesApiRepository;
         }
 
         string metodoAPI = "canal-comunicacao";
@@ -21,7 +22,7 @@ namespace SendGen.Web.Controllers.API
         // Método referente ao "Canais de Comunicação - Listar canais de comunicação" da API do Opa Suite
 
         [HttpPost] //Usado como Post por causa da form de envio via filtro JSON de um "get" do Opa Suite
-        public async Task<IActionResult> canaisGet(canaisGetFilter filtroCanaisForm)
+        public async Task<List<CanaisGetData>> canaisGet(canaisGetFilter filtroCanaisForm)
         {
             canaisGetFilter filtroCanais = new canaisGetFilter
             {
@@ -47,19 +48,21 @@ namespace SendGen.Web.Controllers.API
 
             string stringJSON = JsonConvert.SerializeObject(filtroCanais, settings);
 
-            var retorno = await utilitiesApiRepository.requestGetJSON(metodoAPI, stringJSON);
+            var retorno = await _utilitiesApiRepository.requestGetJSON(metodoAPI, stringJSON);
 
-            return retorno;
+            List<CanaisGetData> resposta = _utilitiesApiRepository.IActionResultToList<CanaisGetData>(retorno);
+
+            return resposta;
         }
 
         // Método usado para chamar os outros gets da api dos canais
-        public async Task<IActionResult> canaisGetID(string canalID, string metodo)
+        public async Task<List<CanaisGetData>> canaisGetID(string canalID, string metodo)
         {
             // Métodos válidos: CanalID, CanalTemplate e CanalTemplateLimite
 
             if (canalID == null || canalID.Length == 0)
             {
-                return BadRequest("É necessário informar o ID de um canal de comunicação.");
+                return null;
             }
 
             var urlAPI = canalID;
@@ -77,9 +80,11 @@ namespace SendGen.Web.Controllers.API
                 Console.WriteLine("\n\nMétodo inválido!\n\n");
             }
 
-            var retorno = await utilitiesApiRepository.requestGetURL(metodoAPI, urlAPI);
+            var retorno = await _utilitiesApiRepository.requestGetURL(metodoAPI, urlAPI);
 
-            return retorno;
+            List<CanaisGetData> resposta = _utilitiesApiRepository.IActionResultToList<CanaisGetData>(retorno);
+
+            return resposta;
         }
 
     }
