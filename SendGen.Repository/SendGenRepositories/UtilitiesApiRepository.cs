@@ -1,4 +1,6 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Dapper;
+using Microsoft.AspNetCore.Mvc;
+using Microsoft.Data.SqlClient;
 using Newtonsoft.Json;
 using SendGen.Domain.OpaSuiteDomains.DataResultModels;
 using SendGen.Domain.SendGenDomains.Data;
@@ -11,6 +13,7 @@ namespace SendGen.Repository.SendGenRepositories
     {
         private string tokenOpaSuite = "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY1MmMxNzRmNzkwNjkyZmQ4YWYyY2E0ZSIsImlhdCI6MTY5NzM4ODM2N30.g81oPrxP-bP672kt8IGwRPmvFvWzvmMno1Csb8XMNi4";
         private string baseUrlAPI = "https://demo2.opasuite.com.br/api/v1/";
+        string conexaoServer = "Server=DESKTOP-H95BSF0\\SQLEXPRESS; Database=SendGen; Integrated Security=True;TrustServerCertificate=True;";
 
         // Enviar um get com filtro via JSON para a API do Opa Suite
         public async Task<IActionResult> requestGetJSON(string metodoAPI, string contentJSON)
@@ -29,7 +32,7 @@ namespace SendGen.Repository.SendGenRepositories
 
             var retorno = await response.Content.ReadAsStringAsync();
 
-            Console.WriteLine(retorno);
+            // Console.WriteLine("Retorno requestGetJSON: " + retorno);
             return new OkObjectResult(retorno);
         }
 
@@ -54,6 +57,7 @@ namespace SendGen.Repository.SendGenRepositories
             return new OkObjectResult(retorno);
         }
 
+        // Converter os dados recebidos da API para List
         public List<T> IActionResultToList<T>(IActionResult objeto) where T : class
         {
             List<T> resposta = null;
@@ -85,6 +89,24 @@ namespace SendGen.Repository.SendGenRepositories
             return resposta;
         }
 
+        // Buscar dados de alguma tabela do banco de dados
+        public List<T> BuscaEntidadeDB<T>(string condicao)
+        {
+            List<T> lista;
+            // Inicializa a conexão
+            using (var con = new SqlConnection(conexaoServer))
+            {
+                // Abre a conexão
+                con.Open();
+
+                lista = con
+                    .Query<T>(@condicao).ToList();
+
+            }
+
+            return lista;
+
+        }
 
     }
 }

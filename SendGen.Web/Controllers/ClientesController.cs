@@ -171,35 +171,29 @@ namespace SendGen.Web.Controllers
             return (_context.Cliente?.Any(e => e.ClienteId == id)).GetValueOrDefault();
         }
 
+        //[HttpPost]
+        //public async Task<IActionResult> EnviarMensagem(int clienteId)
+        //{
+        //    Cliente? cliente = await _context.Cliente.FirstOrDefaultAsync(c => c.ClienteId == clienteId);
 
+        //    if (cliente == null)
+        //    {
+        //        return NotFound();
+        //    }
 
+        //    if (cliente.Celular == null || cliente.Celular == "")
+        //    {
+        //        throw new Exception("O cliente informado não possuí celular cadastrado!");
+        //    }
 
+        //    await templateRepository.Send(cliente.Celular.Trim(), cliente.Nome!.Trim());
 
-
-
-        [HttpPost]
-        public async Task<IActionResult> EnviarMensagem(int clienteId)
-        {
-            Cliente? cliente = await _context.Cliente.FirstOrDefaultAsync(c => c.ClienteId == clienteId);
-
-            if (cliente == null)
-            {
-                return NotFound();
-            }
-
-            if (cliente.Celular == null || cliente.Celular == "")
-            {
-                throw new Exception("O cliente informado não possuí celular cadastrado!");
-            }
-
-            await templateRepository.Send(cliente.Celular.Trim(), cliente.Nome!.Trim());
-
-            return Json(new
-            {
-                Situacao = "OK",
-                Mensagem = "Mensagem enviada!"
-            });
-        }
+        //    return Json(new
+        //    {
+        //        Situacao = "OK",
+        //        Mensagem = "Mensagem enviada!"
+        //    });
+        //}
 
 
 

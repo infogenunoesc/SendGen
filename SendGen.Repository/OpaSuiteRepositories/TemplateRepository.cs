@@ -5,16 +5,11 @@ namespace SendGen.Repository.OpaSuiteRepositories
 {
     public class TemplateRepository : ITemplateRepository
     {
-        public async Task Send(string telefoneCliente, string nome)
+        public async Task Send(string telefoneCliente, string nome, string canalID, string templateID)
         {
             if (string.IsNullOrEmpty(telefoneCliente)) throw new ArgumentNullException();
             if (!telefoneCliente.StartsWith("+")) throw new Exception("O telefone deve começar com \"+\".");
             if (string.IsNullOrEmpty(nome)) throw new ArgumentNullException();
-
-
-#if DEBUG
-            telefoneCliente = "+5549999153242";
-#endif
 
             TemplateSend templateSend = new TemplateSend
             {
@@ -24,13 +19,13 @@ namespace SendGen.Repository.OpaSuiteRepositories
                 },
                 template = new Template
                 {
-                    _id = "6500b9df32843f9dada2e6be",
+                    _id = templateID,
                     variaveis = new List<string>
                     {
                         nome
                     }
                 },
-                canal = "64f09e6332843f9dada2d0d6"
+                canal = canalID
             };
 
 

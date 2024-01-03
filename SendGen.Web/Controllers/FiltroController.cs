@@ -30,7 +30,6 @@ public class FiltroController : Controller
 	string conexaoServer = "Server=DESKTOP-H95BSF0\\SQLEXPRESS; Database=SendGen; Integrated Security=True;TrustServerCertificate=True;";
 
 	private readonly SendGenContexto _context;
-
     private readonly IUtilitiesApiRepository _utilitiesApiRepository;
 
 	public FiltroController(SendGenContexto context, IUtilitiesApiRepository utilitiesApiRepository)
@@ -39,52 +38,13 @@ public class FiltroController : Controller
         _utilitiesApiRepository = utilitiesApiRepository;
     }
 
-	private IEnumerable<Cliente> BuscaClientesDB(string condicao)
-	{
-		IEnumerable<Cliente> lista;
-		// Inicializa a conexão
-		using (var con = new SqlConnection(conexaoServer))
-		{
-			// Abre a conexão
-			con.Open();
-
-			lista = con
-				.Query<Cliente>(@condicao);
-
-			Console.WriteLine("Condição conecta server: " + condicao);
-		}
-
-		return lista;
-
-	}
-
-	private IEnumerable<FiltroDB> BuscaFiltrosDB()
-	{
-		string condicao = "SELECT * FROM FILTRODB";
-
-		IEnumerable<FiltroDB> lista;
-		// Inicializa a conexão
-		using (var con = new SqlConnection(conexaoServer))
-		{
-			// Abre a conexão
-			con.Open();
-
-			lista = con
-				.Query<FiltroDB>(@condicao);
-
-			Console.WriteLine("Condição conecta server: " + condicao);
-		}
-
-		return lista;
-	}
-
 	public async Task<IActionResult> Create(string SearchString, bool enviado = false)
 	{
-		IEnumerable<Cliente> listaClientes = _context.Cliente;
+		List<Cliente> listaClientes = _context.Cliente.ToList();
 
 		if (enviado == true)
 		{
-			listaClientes = BuscaClientesDB(SearchString);
+			listaClientes = _utilitiesApiRepository.BuscaEntidadeDB<Cliente>(SearchString);
 		}
 
 		if (listaClientes == null)
@@ -123,56 +83,11 @@ public class FiltroController : Controller
 	{
 		Console.WriteLine("Filtros: " + _context.FiltroDB.ToJson());
 
-		IEnumerable<FiltroDB> filtros = _context.FiltroDB;
+		List<FiltroDB> filtros = _context.FiltroDB.ToList();
 
 		return View(filtros);
 	}
 
-	public async Task<ActionResult> Agendamento(int filtroID)
-	{
-		FiltroDB filtro = await _context.FiltroDB.FirstOrDefaultAsync(e => e.ID == filtroID);
-
-        var templateController = new TemplateController(_utilitiesApiRepository);
-        var canaisController = new CanaisController(_utilitiesApiRepository);
-
-        Console.WriteLine("Filtro ID: " + filtroID);
-		Console.WriteLine("Filtro: " + filtro.ToJson());
-
-		IEnumerable<Cliente> listaClientes = BuscaClientesDB(filtro.Condicao);
-
-		List<TemplateGetData> templates = await templateController.templateGet(null, null, 0, 100);
-
-        canaisGetFilter filtroCanais = new canaisGetFilter
-        {
-            filter = new filterCanais
-            {
-                
-            },
-            options = new options
-            {
-               
-            }
-        };
-
-        List<CanaisGetData> canais = await canaisController.canaisGet(filtroCanais);
-
-        var viewModel = new FiltroAgendamentoView
-		{
-			Filtro = filtro,
-			Clientes = listaClientes,
-			Templates = templates,
-			Canais = canais
-        };
-		
-		Console.WriteLine("ViewModel Filtro: " + viewModel.Filtro.ToString());
-       
-        Console.WriteLine("ViewModel Templates: " + viewModel.Templates.ToJson());
-
-        Console.WriteLine("ViewModel Canais: " + viewModel.Canais.ToJson());
-
-
-        return View(viewModel);
-	}
 
 
 }

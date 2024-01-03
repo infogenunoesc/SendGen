@@ -2,6 +2,6 @@
 {
     public interface ITemplateRepository
     {
-        Task Send(string telefoneCliente, string nome);
+        Task Send(string telefoneCliente, string nome, string canalID, string templateID);
     }
 }
