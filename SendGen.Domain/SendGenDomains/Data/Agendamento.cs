@@ -14,8 +14,8 @@ namespace SendGen.Domain.SendGenDomains.Data
 		public int FiltroID { get; set; }
 		public string TemplateID { get; set; }
 		public string CanalID { get; set; }
-		public DateTime UltimaExecucao {  get; set; }
-		public int IntervaloExecucao { get; set; }
+		public DateTime? UltimaExecucao {  get; set; }
+		public int? IntervaloExecucao { get; set; }
 		public string Tipo {  get; set; }
 	}
 }

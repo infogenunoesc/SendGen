@@ -9,7 +9,61 @@
     <button type="submit">Iniciar Verificação</button>
 }
 
-<h2>Agendamento</h2>
+@using (Html.BeginForm("testMensagem", "Agendamento", FormMethod.Post))
+{
+
+}
+
+<h4>Agendamentos Salvos</h4>
+
+<table class="table">
+    <thead>
+        <tr>
+            <td>
+                @Html.DisplayNameFor(model => model.Agendamentos[0].ID)
+            </td>
+            <td>
+                @Html.DisplayNameFor(model => model.Agendamentos[0].Tipo)
+            </td>
+            <td>
+                @Html.DisplayNameFor(model => model.Filtros[0].Condicao)
+            </td>
+            <td>
+                @Html.DisplayNameFor(model => model.Agendamentos[0].IntervaloExecucao)
+            </td>
+            <td></td>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model.Agendamentos)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.ID)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Tipo)
+                </td>
+                <td>
+                    @if (Model.Filtros.Any(f => f.ID == item.FiltroID))
+                {
+                        @Html.DisplayFor(modelItem => Model.Filtros.FirstOrDefault(f => f.ID == item.FiltroID).Condicao)
+                }
+                else
+                {
+                    <text>Informação de filtro não encontrada</text>
+                }
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.IntervaloExecucao)
+                </td>
+                <td></td>
+            </tr>
+        }
+    </tbody>
+</table>
+
+<h4>Criar novo agendamento</h4>
 
 @using (Html.BeginForm("SalvarAgendamento", "Agendamento", FormMethod.Post))
 {
@@ -35,42 +89,48 @@
 
     <div>
         <label for="tipo">tipo: </label>
-        <input type="text" id="tipo" name="tipo" />
+        <select name="tipo">
+            <option value=""></option>
+            <option>Recado</option>
+            <option>Aniversário</option>
+        </select>
     </div>
 
     <input type="submit" value="Enviar" />
 }
 
-<h4>Filtro</h4>
+<h4>Filtros</h4>
 
 <table class="table">
 
     <thead>
         <tr>
             <td>
-                @Html.DisplayNameFor(model => model.Filtro.ID)
+                @Html.DisplayNameFor(model => model.Filtros[0].ID)
             </td>
             <td>
-                @Html.DisplayNameFor(model => model.Filtro.Condicao)
+                @Html.DisplayNameFor(model => model.Filtros[0].Condicao)
             </td>
             <td></td>
         </tr>
     </thead>
     <tbody>
 
-        <tr>
-            <td>
-                @Html.DisplayFor(model => model.Filtro.ID)
-            </td>
-            <td>
-                @Html.DisplayFor(model => model.Filtro.Condicao)
-            </td>
-            <td></td>
-        </tr>
-        
-
+        @foreach (var item in Model.Filtros)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.ID)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Condicao)
+                </td>
+                <td></td>
+            </tr>
+        }
     </tbody>
 </table>
+
 <h4>Template</h4>
 
 <table class="table">
@@ -187,37 +247,3 @@
             		
 	    </tbody>
     </table>
-
-<h4>Frequência</h4>
-
-
-<h4>Clientes</h4>
-
-<table class="table">
-    <thead>
-        <tr>
-            <td>
-                @Html.DisplayNameFor(model => model.Clientes.FirstOrDefault().ClienteId)
-            </td>
-            <td>
-                @Html.DisplayNameFor(model => model.Clientes.FirstOrDefault().Nome)
-            </td>
-
-            <td></td>
-        </tr>
-    </thead>
-    <tbody>
-        @foreach (var item in Model.Clientes)
-        {
-            <tr>
-                <td>
-                    @Html.DisplayFor(modelItem => item.ClienteId)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.Nome)
-                </td>
-                <td></td>
-            </tr>
-        }
-    </tbody>
-</table>

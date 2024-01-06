@@ -5,10 +5,10 @@ namespace SendGen.Web.Models
 {
     public class FiltroAgendamentoView
     {
-        public FiltroDB Filtro { get; set; }
-        public IEnumerable<Cliente> Clientes { get; set; }
+        public List<FiltroDB> Filtros { get; set; }
         public List<TemplateGetData> Templates { get; set; }
         public List<CanaisGetData> Canais { get; set; }
+        public List<Agendamento> Agendamentos { get; set; }
 
     }
 

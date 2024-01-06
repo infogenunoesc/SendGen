@@ -33,19 +33,10 @@ public class AgendamentoController : Controller
         _templateRepository = templateRepository;
     }
 
-    public async Task<ActionResult> Index(int? filtroID)
+    public async Task<ActionResult> Index()
     {
-        FiltroDB filtro = await _context.FiltroDB.FirstOrDefaultAsync(e => e.ID == filtroID);
-
         var templateController = new TemplateController(_utilitiesApiRepository);
         var canaisController = new CanaisController(_utilitiesApiRepository);
-
-        Console.WriteLine("Filtro ID: " + filtroID);
-        Console.WriteLine("Filtro: " + filtro.ToJson());
-
-        string? filtroCondicao = filtro?.Condicao ?? "Select * from [SendGen].[dbo].[Cliente]";
-
-        List<Cliente> listaClientes = _utilitiesApiRepository.BuscaEntidadeDB<Cliente>(filtroCondicao);
 
         List<TemplateGetData> templates = await templateController.templateGet(null, null, 0, 100);
 
@@ -57,20 +48,85 @@ public class AgendamentoController : Controller
 
         List<CanaisGetData> canais = await canaisController.canaisGet(filtroCanais);
 
+        List<Agendamento> agendamentos = _context.Agendamento.ToList();
+
+        List<FiltroDB> filtros = _context.FiltroDB.ToList();
+
         var viewModel = new FiltroAgendamentoView
         {
-            Filtro = filtro,
-            Clientes = listaClientes,
+            Filtros = filtros,
             Templates = templates,
-            Canais = canais
+            Canais = canais,
+            Agendamentos = agendamentos            
         };
 
         return View(viewModel);
     }
 
+    private Timer _timer;
 
+    public void IniciarVerificacao()
+    {
+        TemplateRepository envioTemplate = new TemplateRepository();
+        
+        _timer = new Timer(async (e) =>
+        {
+            Console.WriteLine("Iniciando Verificação...");
 
-[HttpPost]
+            List<Agendamento> listaAgendamentos = _utilitiesApiRepository.BuscaEntidadeDB<Agendamento>("Select * from [SendGen].[dbo].[Agendamento]");
+            List<FiltroDB> listaFiltros = _utilitiesApiRepository.BuscaEntidadeDB<FiltroDB>("Select * from [SendGen].[dbo].[FiltroDB]");
+
+            DateTime DataAtual = DateTime.Now;
+  
+            foreach (var agendamento in listaAgendamentos)
+            {
+                switch (agendamento.Tipo)
+                {
+                    case "Aniversário":
+                        var listaClientes = filtrarListaClientes(listaFiltros, agendamento.FiltroID);
+                        foreach (var cliente in listaClientes)
+                        {
+                            if (cliente.DataNascimento != null && 
+                            (cliente.DataNascimento.Value.Day == DataAtual.Day &&
+                            cliente.DataNascimento.Value.Month == DataAtual.Month))
+                            {
+                                Console.WriteLine("Aniversário encontrado");
+
+                                Console.WriteLine("Cliente Aniversário: " + cliente.ToJson());
+
+                                // await envioTemplate.Send(cliente.Celular, cliente.Nome, agendamento.CanalID, agendamento.TemplateID);
+
+                                await AtualizarAgendamento(DataAtual, agendamento.ID);
+                            }
+                        }
+                        break;
+                    case "Recado":
+                        TimeSpan diferencaData = DataAtual - (agendamento.UltimaExecucao ?? DateTime.MinValue);                          
+                    
+                        if ((diferencaData.TotalMinutes > agendamento.IntervaloExecucao) || agendamento.UltimaExecucao == null)
+                        {
+                            Console.WriteLine("Recado sendo enviado..." );
+
+                            filtrarListaClientes(listaFiltros, agendamento.FiltroID)
+                            .ForEach(cliente => Console.WriteLine("Cliente Aniversário: " + cliente.ToJson()));
+
+                            //filtrarListaClientes(listaFiltros, agendamento.FiltroID)
+                            //.ForEach(async cliente => await envioTemplate.Send(cliente.Celular, cliente.Nome, agendamento.CanalID, agendamento.TemplateID));
+
+                            await AtualizarAgendamento(DataAtual, agendamento.ID);
+
+                        }                         
+                        break;
+                    default:
+                        Console.WriteLine("Tipo de agendamento não encontrado.");
+                        break;
+                }                                         
+            }
+            Console.WriteLine("Verificação concluída");  
+        }, null, TimeSpan.Zero, TimeSpan.FromSeconds(30));
+    }
+
+    [HttpPost]
     public async Task SalvarAgendamento(int filtroID, string templateID, string canalID, int intervaloExecucao, string tipo)
     {
         Agendamento agendamento = new Agendamento
@@ -88,98 +144,19 @@ public class AgendamentoController : Controller
         Console.WriteLine("Agendamento Salvo");
     }
 
-    public async Task Salvar(string condicao)
+    [HttpPut]
+    public async Task AtualizarAgendamento(DateTime data, int id)
     {
-        FiltroDB filtro = new FiltroDB
+        using (var context = new SendGenContexto())
         {
-            Condicao = condicao
-        };
+            var agendamento = await context.Agendamento.FirstOrDefaultAsync(a => a.ID == id);
 
-        _context.FiltroDB.Add(filtro);
-        await _context.SaveChangesAsync();
+            agendamento.UltimaExecucao = data;
+            await context.SaveChangesAsync();
 
-        Console.WriteLine("Salvar: " + condicao);
-    }
-
-    private Timer _timer;
-
-    public void IniciarVerificacao()
-    {
-        
-            TemplateRepository envioTemplate = new TemplateRepository();
-
-            _timer = new Timer(async (e) =>
-            {
-                Console.WriteLine("Iniciando Verificação.");
-
-
-                List<Agendamento> listaAgendamentos = _utilitiesApiRepository.BuscaEntidadeDB<Agendamento>("Select * from [SendGen].[dbo].[Agendamento]");
-            List<FiltroDB> listaFiltros = _utilitiesApiRepository.BuscaEntidadeDB<FiltroDB>("Select * from [SendGen].[dbo].[FiltroDB]");
-
-                foreach (var item in listaFiltros)
-                {
-                    Console.WriteLine("FiltroID: " + item.ID + "/ Condição: " + item.Condicao);
-                }
-
-                foreach (var item in listaAgendamentos)
-                {
-                    Console.WriteLine("Agendamento ID: " + item.ID + "/ Tipo: " + item.Tipo);
-                }
-
-                DateTime DataAtual = DateTime.Now;
-
-            List<int> frequenciaHoras = new List<int> { 1, 2, 3, 4 };
-
-            foreach (var agendamento in listaAgendamentos)
-            {
-                switch (agendamento.Tipo)
-                {
-                    case "Aniversário":
-                        var listaClientes = filtrarListaClientes(listaFiltros, agendamento.FiltroID);
-
-                        foreach (var cliente in listaClientes)
-                        {
-
-                            if (cliente.DataNascimento != null && 
-                            (cliente.DataNascimento.Value.Day == DataAtual.Day &&
-                            cliente.DataNascimento.Value.Month == DataAtual.Month))
-                            {
-                                    Console.WriteLine("Aniversário encontrado");
-                                    
-                                     // await envioTemplate.Send(cliente.Celular, cliente.Nome, agendamento.CanalID, agendamento.TemplateID);
-                            }
-
-
-                            }
-                        break;
-                    case "Recado":
-                            Console.WriteLine("Recado sendo checado: " + agendamento.ID);
-                        TimeSpan diferencaData = (DataAtual - agendamento.UltimaExecucao);
-
-                            Console.WriteLine("Diferença data: " + diferencaData);
-
-                            foreach (var intervalo in frequenciaHoras)
-                        {
-                            if (agendamento.IntervaloExecucao == intervalo &&
-                            (diferencaData.TotalMinutes > (intervalo * 60) || agendamento.UltimaExecucao == null))
-                            {
-                                    Console.WriteLine("Recado sendo enviado..." );
-
-                                    filtrarListaClientes(listaFiltros, agendamento.FiltroID)
-                                    .ForEach(async cliente => await envioTemplate.Send(cliente.Celular, cliente.Nome, agendamento.CanalID, agendamento.TemplateID));
-
-                                }
-                            }                           
-
-                        break;
-
-                    default:
-                        break;
-                }                                         
-            }
-
-            }, null, TimeSpan.Zero, TimeSpan.FromSeconds(30));
+            Console.WriteLine("Ultima Execução: " + data.ToJson());
         }
+    }
 
     public List<Cliente> filtrarListaClientes(List<FiltroDB> listaFiltros, int idFiltro)
     {
@@ -189,13 +166,5 @@ public class AgendamentoController : Controller
         
         return listaClientes.Where(cliente => cliente.Celular != null).ToList();
     }
-
-    public async Task enviarMensagem()
-    {
-        TemplateRepository envioTemplate = new TemplateRepository();
-
-        await envioTemplate.Send("+55049988190017", "Morgane", "64f09e6332843f9dada2d0d6", "6500b9df32843f9dada2e6be");
-    }
-
 
 }
