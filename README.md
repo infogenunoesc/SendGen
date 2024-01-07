@@ -2,7 +2,7 @@
 ![Logo](https://i.ibb.co/y61VB2b/Send-Gen-logo.png)
 
 
-# SendGen📋📌
+## Desafio do projeto 📋📌
 
 Desenvolver um middleware que permita a comunicação do ERP da empresa, escrito em Genexus, com a plataforma omnychannel Opa Suit, Durante o uso desta API popular uma base para futuro ML armazenando os gatilhos do sistema ERP acionados com a comunicação que cada gatilho acionou.
 
@@ -13,12 +13,17 @@ Infogen Sistemas - Software de Gestão e ERP - Chapecó-SC
 
 https://infogen.com.br/
 
+Somos uma empresa de tecnologia, focada no desenvolvimento de software de gestão direcionado ao seguimento do agronegócio.
+
+
 
 
 ## Grupo 7 - Alunos 👩‍💻👨‍💻
 
 - [@kikovander](https://www.github.com/kikovander)
-
+-
+-
+-
 
 ## Stack utilizadas 💻
 
@@ -74,7 +79,7 @@ https://infogen.com.br/
 
 - Cadastro de usuário/login
 - CRUD clientes
-- Envio de mensagem via template
+- Envio de mensagem via template Opa Suite
 
 
 
