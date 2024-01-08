@@ -83,7 +83,7 @@ Somos uma empresa de tecnologia, focada no desenvolvimento de software de gestã
 
 
 
-## Screenshots
+## Screenshots 🖼️
 
 ![App Screenshot](https://via.placeholder.com/468x300?text=App+Screenshot+Here)
 
