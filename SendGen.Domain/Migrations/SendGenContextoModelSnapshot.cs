@@ -22,41 +22,6 @@ namespace SendGen.Domain.Migrations
 
             SqlServerModelBuilderExtensions.UseIdentityColumns(modelBuilder);
 
-            modelBuilder.Entity("SendGen.Domain.SendGenDomains.Data.Agendamento", b =>
-                {
-                    b.Property<int>("ID")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
-
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("ID"));
-
-                    b.Property<string>("CanalID")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("Condicao")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("FiltroID")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<int>("IntervaloExecucao")
-                        .HasColumnType("int");
-
-                    b.Property<string>("TemplateID")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<DateTime>("UltimaExecucao")
-                        .HasColumnType("datetime2");
-
-                    b.HasKey("ID");
-
-                    b.ToTable("Agendamento");
-                });
-
             modelBuilder.Entity("SendGen.Domain.SendGenDomains.Data.Cliente", b =>
                 {
                     b.Property<int>("ClienteId")
@@ -80,23 +45,6 @@ namespace SendGen.Domain.Migrations
                     b.HasKey("ClienteId");
 
                     b.ToTable("Cliente");
-                });
-
-            modelBuilder.Entity("SendGen.Domain.SendGenDomains.Data.FiltroDB", b =>
-                {
-                    b.Property<int>("ID")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
-
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("ID"));
-
-                    b.Property<string>("Condicao")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.HasKey("ID");
-
-                    b.ToTable("FiltroDB");
                 });
 #pragma warning restore 612, 618
         }

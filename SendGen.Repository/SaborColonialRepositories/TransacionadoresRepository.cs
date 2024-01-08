@@ -1,15 +1,22 @@
 ﻿using Dapper;
 using Microsoft.Data.SqlClient;
 using SendGen.Domain.SaborColonialDomains.Data;
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
 
 namespace SendGen.Repository.SaborColonialRepositories
 {
-    public class TransacionadoresRepository
+	// Repositório para interagir com a entidade clientes no banco de dados SaborColonial
+	public class TransacionadoresRepository
     {
-
-        public List<Transacionadores> ObterClientes()
+		// Método para obter a lista de clientes do banco de dados
+		public List<Transacionadores> ObterClientes()
         {
-            string connectionString = "Server=DESKTOP-H95BSF0\\SQLEXPRESS; Database=SaborColonial; Integrated Security=True;TrustServerCertificate=True;";
+			// String de conexão com o banco de dados SaborColonial
+			string connectionString = "Server=localhost; Database=SaborColonial; Integrated Security=True;TrustServerCertificate=True;";
 
             // Inicializa a conexão
             using (var con = new SqlConnection(connectionString))
@@ -17,12 +24,13 @@ namespace SendGen.Repository.SaborColonialRepositories
                 // Abre a conexão
                 con.Open();
 
-                List<Transacionadores> lista = con
+				// Utiliza Dapper para executar uma consulta SQL e mapear os resultados para uma lista de clientes
+				List<Transacionadores> lista = con
                     .Query<Transacionadores>(@"SELECT TraCod, TraNom, TraCelular, TraDatNasc FROM [dbo].[TRANSACIONADORES]")
                     .ToList();
 
-
-                return lista;
+				// Retorna a lista de clientes
+				return lista;
             }
         }
     }

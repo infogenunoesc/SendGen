@@ -12,7 +12,6 @@ using System.Configuration;
 using System.Diagnostics;
 using System.Text.Json;
 using static System.Net.Mime.MediaTypeNames;
-using X.PagedList;
 using SendGen.Domain.OpaSuiteDomains;
 using SendGen.Web.Models;
 using SendGen.Repository.SendGenRepositories;
@@ -20,7 +19,6 @@ using SendGen.Web.Controllers.API;
 using SendGen.Domain.OpaSuiteDomains.Filtros;
 using SendGen.Domain.OpaSuiteDomains.DataResultModels;
 using Azure;
-using System.Web.Helpers;
 using Newtonsoft.Json;
 
 namespace SendGen.Web.Controllers;

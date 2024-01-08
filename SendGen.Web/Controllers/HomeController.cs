@@ -1,10 +1,11 @@
-﻿using Microsoft.AspNetCore.Mvc;
-using Microsoft.IdentityModel.Tokens;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Mvc;
 using SendGen.Web.Models;
 using System.Diagnostics;
 
 namespace SendGen.Web.Controllers
 {
+    [Authorize]
     public class HomeController : Controller
     {
         private readonly ILogger<HomeController> _logger;

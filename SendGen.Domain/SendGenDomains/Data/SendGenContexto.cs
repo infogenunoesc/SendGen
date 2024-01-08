@@ -14,7 +14,7 @@ namespace SendGen.Domain.SendGenDomains.Data
 
         //referencia a classe Cliente - Demais classe nessitam estar aqui também
         public DbSet<Cliente> Cliente { get; set; }
-		public DbSet<FiltroDB> FiltroDB { get; set; }
+	public DbSet<FiltroDB> FiltroDB { get; set; }
         public DbSet<Agendamento> Agendamento { get; set; }
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
@@ -26,7 +26,8 @@ namespace SendGen.Domain.SendGenDomains.Data
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
 			modelBuilder.Entity<Cliente>().HasKey(c => c.ClienteId);
-			modelBuilder.Entity<FiltroDB>().HasKey(c => c.ID);
+			modelBuilder.Entity<FiltroDB>().HasKey(f => f.ID);
+			modelBuilder.Entity<Agendamento>().HasKey(a => a.ID);
 		}
 	}
 }

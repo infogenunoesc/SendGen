@@ -1,4 +1,6 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Mvc;
+using Microsoft.VisualBasic;
 using SendGen.Domain.SaborColonialDomains.Data;
 using SendGen.Domain.SendGenDomains.Data;
 using SendGen.Repository.SaborColonialRepositories;
@@ -6,35 +8,51 @@ using SendGen.Repository.SendGenRepositories;
 
 namespace SendGen.Web.Controllers
 {
+	// O atributo [Authorize] indica que somente usuários autenticados podem acessar este controlador
+
+	[Authorize]
     public class ObterClientesController : Controller
     {
         private readonly IClienteRepository clienteRepository;
 
-        public ObterClientesController(IClienteRepository clienteRepository)
+		// Construtor que realiza a injeção de dependência do repositório de clientes
+
+		public ObterClientesController(IClienteRepository clienteRepository)
         {
             this.clienteRepository = clienteRepository;
         }
 
-        public IActionResult Index()
+		// Ação que retorna a view principal
+		public IActionResult Index()
         {
             return View();
         }
 
-        [HttpPost]
+		// Ação que processa a obtenção e processamento de clientes
+
+		[HttpPost]
         public IActionResult Processar()
         {
-            var transacionadoresRepository = new TransacionadoresRepository();
-            List<Transacionadores> listaTransacionadores = transacionadoresRepository.ObterClientes();
+			// Cria uma instância do repositório de transacionadores
+			var transacionadoresRepository = new TransacionadoresRepository();
 
-            List<Cliente> clientesJaCadastrados = clienteRepository.ObterClientes().ToList();
+			// Obtém a lista de transacionadores
+			List<Transacionadores> listaTransacionadores = transacionadoresRepository.ObterClientes();
 
-            List<Cliente> clientes = new List<Cliente>();
-            foreach (var item in listaTransacionadores)
+			// Obtém a lista de clientes já cadastrados
+			List<Cliente> clientesJaCadastrados = clienteRepository.ObterClientes().ToList();
+
+			// Lista para armazenar novos clientes ou atualizações
+			List<Cliente> clientes = new List<Cliente>();
+
+			// Loop sobre os transacionadores
+			foreach (var item in listaTransacionadores)
             {
-                Cliente? cliente = clientesJaCadastrados.Where(c => c.TraCod == item.TraCod).SingleOrDefault();
+				// Busca um cliente com base no código do transacionador
+				Cliente? cliente = clientesJaCadastrados.Where(c => c.TraCod == item.TraCod).SingleOrDefault();
 
-
-                if (cliente == null)
+				// Se o cliente não existe, adiciona um novo cliente à lista
+				if (cliente == null)
                 {
                     clientes.Add(new Cliente
                     {
@@ -46,22 +64,17 @@ namespace SendGen.Web.Controllers
                 }
                 else
                 {
-                    cliente.Celular = item.TraCelular;
+					// Se o cliente já existe, atualiza as informações
+					cliente.Celular = item.TraCelular;
                     cliente.Nome = item.TraNom;
                     cliente.DataNascimento = item.TraDatNasc;
                 }
             }
+			// Insere os novos clientes ou atualizações no repositório de clientes
+			clienteRepository.Inserir(clientes);
 
-            clienteRepository.Inserir(clientes);
-
-
-
-
-            //List<Cliente> aniverariantes = clienteRepository.ObterClientes().Where(c => c.DataNascimento.Value.Month == DateTime.Today.Month && c.DataNascimento.Value.Day == DateTime.Today.Day).ToList();
-
-
-
-            return View("Index");
+			// Retorna a view principal
+			return View("Index");
         }
     }
 }

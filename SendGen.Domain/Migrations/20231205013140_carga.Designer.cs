@@ -12,8 +12,8 @@ using SendGen.Domain.SendGenDomains.Data;
 namespace SendGen.Domain.Migrations
 {
     [DbContext(typeof(SendGenContexto))]
-    [Migration("20231218171636_AddTabela_FiltroDB")]
-    partial class AddTabela_FiltroDB
+    [Migration("20231205013140_carga")]
+    partial class carga
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -48,23 +48,6 @@ namespace SendGen.Domain.Migrations
                     b.HasKey("ClienteId");
 
                     b.ToTable("Cliente");
-                });
-
-            modelBuilder.Entity("SendGen.Domain.SendGenDomains.Data.FiltroDB", b =>
-                {
-                    b.Property<int>("ID")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
-
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("ID"));
-
-                    b.Property<string>("Condicao")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.HasKey("ID");
-
-                    b.ToTable("FiltroDB");
                 });
 #pragma warning restore 612, 618
         }

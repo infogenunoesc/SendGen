@@ -4,19 +4,24 @@ namespace SendGen.Repository.SendGenRepositories
 {
     public class ClienteRepository : IClienteRepository
     {
-        private readonly SendGenContexto sendGenContexto;
+		// Membro privado para armazenar a instância do contexto do banco de dados
+		private readonly SendGenContexto sendGenContexto;
 
-        public ClienteRepository(SendGenContexto sendGenContexto)
+		// Construtor que recebe o contexto como dependência
+		public ClienteRepository(SendGenContexto sendGenContexto)
         {
             this.sendGenContexto = sendGenContexto;
         }
 
-        public List<Cliente> ObterClientes()
+		// Método para obter todos os clientes do contexto
+		public List<Cliente> ObterClientes()
         {
-            return sendGenContexto.Cliente.ToList();
+			// Utiliza LINQ para obter todos os clientes e converte para uma lista
+			return sendGenContexto.Cliente.ToList();
         }
 
-        public void Inserir(List<Cliente> clientes)
+		// Método para inserir uma lista de clientes no contexto e salvar as alterações
+		public void Inserir(List<Cliente> clientes)
         {
             sendGenContexto.AddRange(clientes);
             sendGenContexto.SaveChanges();

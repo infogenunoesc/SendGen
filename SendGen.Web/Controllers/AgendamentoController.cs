@@ -17,6 +17,7 @@ using System.Collections.Generic;
 using System.Data;
 using System.ComponentModel.DataAnnotations;
 using static System.Net.Mime.MediaTypeNames;
+using SendGen.Domain.OpaSuiteDomains.OpaSuiteTemplate;
 
 namespace SendGen.Web.Controllers;
 
@@ -35,10 +36,10 @@ public class AgendamentoController : Controller
 
     public async Task<ActionResult> Index()
     {
-        var templateController = new TemplateController(_utilitiesApiRepository);
         var canaisController = new CanaisController(_utilitiesApiRepository);
 
-        List<TemplateGetData> templates = await templateController.templateGet(null, null, 0, 100);
+        OpaSuiteTemplateListResponse templates = await _templateRepository.Get();
+               
 
         canaisGetFilter filtroCanais = new canaisGetFilter
         {
@@ -65,10 +66,12 @@ public class AgendamentoController : Controller
 
     private Timer _timer;
 
+    // Faz a verificação dos agendamentos, enviando mensagem para os clientes que cumprirem os requisitos
     public void IniciarVerificacao()
     {
         TemplateRepository envioTemplate = new TemplateRepository();
-        
+        int TempoChecagem = 30; //Em segundos
+
         _timer = new Timer(async (e) =>
         {
             Console.WriteLine("Iniciando Verificação...");
@@ -90,31 +93,27 @@ public class AgendamentoController : Controller
                             (cliente.DataNascimento.Value.Day == DataAtual.Day &&
                             cliente.DataNascimento.Value.Month == DataAtual.Month))
                             {
-                                Console.WriteLine("Aniversário encontrado");
-
                                 Console.WriteLine("Cliente Aniversário: " + cliente.ToJson());
 
-                                // await envioTemplate.Send(cliente.Celular, cliente.Nome, agendamento.CanalID, agendamento.TemplateID);
+                                // await envioTemplate.Send(cliente.Celular, cliente.Nome, agendamento.TemplateID);
 
-                                await AtualizarAgendamento(DataAtual, agendamento.ID);
+                                await AtualizarTempoExecusao(DataAtual, agendamento.ID);
                             }
                         }
                         break;
                     case "Recado":
                         TimeSpan diferencaData = DataAtual - (agendamento.UltimaExecucao ?? DateTime.MinValue);                          
                     
-                        if ((diferencaData.TotalMinutes > agendamento.IntervaloExecucao) || agendamento.UltimaExecucao == null)
+                        if ((diferencaData.TotalMinutes > (agendamento.IntervaloExecucao)) || agendamento.UltimaExecucao == null)
                         {
-                            Console.WriteLine("Recado sendo enviado..." );
-
                             filtrarListaClientes(listaFiltros, agendamento.FiltroID)
-                            .ForEach(cliente => Console.WriteLine("Cliente Aniversário: " + cliente.ToJson()));
+                            .ForEach(cliente => Console.WriteLine("Cliente Recado: " + cliente.ToJson()));
+
 
                             //filtrarListaClientes(listaFiltros, agendamento.FiltroID)
-                            //.ForEach(async cliente => await envioTemplate.Send(cliente.Celular, cliente.Nome, agendamento.CanalID, agendamento.TemplateID));
+                            //.ForEach(async cliente => await envioTemplate.Send(cliente.Celular, cliente.Nome, agendamento.TemplateID));
 
-                            await AtualizarAgendamento(DataAtual, agendamento.ID);
-
+                            await AtualizarTempoExecusao(DataAtual, agendamento.ID);
                         }                         
                         break;
                     default:
@@ -123,7 +122,7 @@ public class AgendamentoController : Controller
                 }                                         
             }
             Console.WriteLine("Verificação concluída");  
-        }, null, TimeSpan.Zero, TimeSpan.FromSeconds(30));
+        }, null, TimeSpan.Zero, TimeSpan.FromSeconds(TempoChecagem));
     }
 
     [HttpPost]
@@ -145,7 +144,7 @@ public class AgendamentoController : Controller
     }
 
     [HttpPut]
-    public async Task AtualizarAgendamento(DateTime data, int id)
+    public async Task AtualizarTempoExecusao(DateTime data, int id)
     {
         using (var context = new SendGenContexto())
         {
