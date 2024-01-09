@@ -21,8 +21,8 @@ Somos uma empresa de tecnologia, focada no desenvolvimento de software de gestã
 ## Grupo 7 - Alunos 👩‍💻👨‍💻
 
 - [@kikovander](https://www.github.com/kikovander)
--
--
+- [@ionar](https://www.github.com/ionar)
+- [@morganeafb](https://github.com/morganeafb)
 -
 
 ## Stack utilizadas 💻
