@@ -1,22 +1,59 @@
 ﻿@model SendGen.Web.Models.FiltroAgendamentoView
 
 @{
-	ViewData["Title"] = "Agendamento";
+	ViewData["Title"] = "Agendamentos";
 }
 
-@using (Html.BeginForm("IniciarVerificacao", "Agendamento", FormMethod.Post))
+<h4>Criar novo agendamento</h4>
+
+@using (Html.BeginForm("SalvarAgendamento", "Agendamento", FormMethod.Post))
 {
-    <button type="submit">Iniciar Verificação</button>
+    <div class="form-group p-2">
+        <label for="filtroID" class="control-label">ID do Filtro: </label>
+        <input type="number" id="filtroID" name="filtroID" class="form-control" />
+    </div>
+
+    <div class="form-group p-2">
+        <label for="templateID" class="control-label">ID do Template: </label>
+        <input type="text" id="templateID" name="templateID" class="form-control" />
+    </div>
+
+    <div class="form-group p-2">
+        <label for="canalID" class="control-label">ID do Canal: </label>
+        <input type="text" id="canalID" name="canalID" class="form-control" />
+    </div>
+
+    <div class="form-group p-2">
+        <label for="intervaloExecucao" class="control-label">Intervalo de Execução: </label>
+        <input type="number" id="intervaloExecucao" name="intervaloExecucao" class="form-control" />
+    </div>
+
+    <div class="form-group p-2">
+        <label for="tipo" class="control-label">Tipo: </label>
+        <select name="tipo" class="form-select">
+            <option value=""></option>
+            <option>Recado</option>
+            <option>Aniversário</option>
+        </select>
+    </div>
+
+    <div class="p-2">
+        <button type="submit" class="btn btn-success">Enviar</button>
+    </div>
 }
 
-@using (Html.BeginForm("testMensagem", "Agendamento", FormMethod.Post))
-{
+<h4>Iniciar Verificações</h4>
 
-}
+<div class="p-2">
+    @using (Html.BeginForm("IniciarVerificacao", "Agendamento", FormMethod.Post))
+    {
+        <button type="submit" class="btn btn-success">Iniciar Verificação</button>
+    }
+</div>
 
 <h4>Agendamentos Salvos</h4>
 
-<table class="table">
+<table class="table p-2">
     <thead>
         <tr>
             <td>
@@ -46,13 +83,13 @@
                 </td>
                 <td>
                     @if (Model.Filtros.Any(f => f.ID == item.FiltroID))
-                {
+                    {
                         @Html.DisplayFor(modelItem => Model.Filtros.FirstOrDefault(f => f.ID == item.FiltroID).Condicao)
-                }
-                else
-                {
-                    <text>Informação de filtro não encontrada</text>
-                }
+                    }
+                    else
+                    {
+                        <text>Informação de filtro não encontrada</text>
+                    }
                 </td>
                 <td>
                     @Html.DisplayFor(modelItem => item.IntervaloExecucao)
@@ -63,47 +100,10 @@
     </tbody>
 </table>
 
-<h4>Criar novo agendamento</h4>
-
-@using (Html.BeginForm("SalvarAgendamento", "Agendamento", FormMethod.Post))
-{
-    <div>
-        <label for="filtroID">filtroID: </label>
-        <input type="number" id="filtroID" name="filtroID" />
-    </div>
-
-    <div>
-        <label for="templateID">templateID: </label>
-        <input type="text" id="templateID" name="templateID" />
-    </div>
-
-    <div>
-        <label for="canalID">canalID: </label>
-        <input type="text" id="canalID" name="canalID" />
-    </div>
-
-    <div>
-        <label for="intervaloExecucao">intervaloExecucao: </label>
-        <input type="number" id="intervaloExecucao" name="intervaloExecucao" />
-    </div>
-
-    <div>
-        <label for="tipo">tipo: </label>
-        <select name="tipo">
-            <option value=""></option>
-            <option>Recado</option>
-            <option>Aniversário</option>
-        </select>
-    </div>
-
-    <input type="submit" value="Enviar" />
-}
-
 <h4>Filtros</h4>
 
-<table class="table">
-
-    <thead>
+<table class="table p-2">
+    <thead>        
         <tr>
             <td>
                 @Html.DisplayNameFor(model => model.Filtros[0].ID)
@@ -113,9 +113,9 @@
             </td>
             <td></td>
         </tr>
+        </div>
     </thead>
     <tbody>
-
         @foreach (var item in Model.Filtros)
         {
             <tr>
@@ -130,11 +130,10 @@
         }
     </tbody>
 </table>
-@* 
-<h4>Template</h4>
 
-<table class="table">
+<h4>Templates</h4>
 
+<table class="table p-2">
     <thead>
         <tr>
             <td>
@@ -156,7 +155,6 @@
         </tr>
     </thead>
     <tbody>
-
         @foreach (var item in Model.Templates)
         {
             <tr>
@@ -181,69 +179,67 @@
                 <td></td>
             </tr>
         }
-
     </tbody>
 </table>
- *@
+ 
 <h4>Canal de Comunicação</h4>
 
-    <table class="table">
+<table class="table p-2">
+    <thead>
+    <tr>
+        <td>
+            @Html.DisplayNameFor(model => model.Canais[0]._id)
+        </td>
+        <td>
+            @Html.DisplayNameFor(model => model.Canais[0].nome)
+        </td>
+        <td>
+            @Html.DisplayNameFor(model => model.Canais[0].id_atendente)
+        </td>
+        <td>
+            @Html.DisplayNameFor(model => model.Canais[0].status)
+        </td>
+        <td>
+            @Html.DisplayNameFor(model => model.Canais[0].canal)
+        </td>
+        <td>
+            @Html.DisplayNameFor(model => model.Canais[0].integracao)
+        </td>
+        <td>
+            @Html.DisplayNameFor(model => model.Canais[0].prioridadeListagemAtendimentos)
+        </td>
+        <td></td>
+    </tr>
+    </thead>
+	<tbody>
 
-        <thead>
+        @foreach (var item in Model.Canais)
+        {
         <tr>
             <td>
-                @Html.DisplayNameFor(model => model.Canais[0]._id)
+                @Html.DisplayFor(modelItem => item._id)
             </td>
             <td>
-                @Html.DisplayNameFor(model => model.Canais[0].nome)
+                @Html.DisplayFor(modelItem => item.nome)
             </td>
             <td>
-                @Html.DisplayNameFor(model => model.Canais[0].id_atendente)
+                @Html.DisplayFor(modelItem => item.id_atendente)
             </td>
             <td>
-                @Html.DisplayNameFor(model => model.Canais[0].status)
+                @Html.DisplayFor(modelItem => item.status)
             </td>
             <td>
-                @Html.DisplayNameFor(model => model.Canais[0].canal)
+                @Html.DisplayFor(modelItem => item.canal)
             </td>
             <td>
-                @Html.DisplayNameFor(model => model.Canais[0].integracao)
+                @Html.DisplayFor(modelItem => item.integracao)
             </td>
             <td>
-                @Html.DisplayNameFor(model => model.Canais[0].prioridadeListagemAtendimentos)
+                @Html.DisplayFor(modelItem => item.prioridadeListagemAtendimentos)
             </td>
             <td></td>
         </tr>
-        </thead>
-	    <tbody>
-
-            @foreach (var item in Model.Canais)
-            {
-            <tr>
-                <td>
-                    @Html.DisplayFor(modelItem => item._id)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.nome)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.id_atendente)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.status)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.canal)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.integracao)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.prioridadeListagemAtendimentos)
-                </td>
-                <td></td>
-            </tr>
-            }
+        }
             		
-	    </tbody>
-    </table>
+	</tbody>
+</table>

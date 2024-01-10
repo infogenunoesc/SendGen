@@ -1,23 +1,13 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using SendGen.Domain.OpaSuiteDomains.DataResultModels;
-using SendGen.Domain.OpaSuiteDomains.Filtros;
 using SendGen.Domain.SendGenDomains.Data;
 using SendGen.Repository.SendGenRepositories;
 using SendGen.Web.Models;
 using NuGet.Protocol;
-using SendGen.Web.Controllers.API;
-using JetBrains.Annotations;
-using SendGen.Domain.OpaSuiteDomains;
 using SendGen.Repository.OpaSuiteRepositories;
-using Microsoft.EntityFrameworkCore.Metadata.Internal;
-using Microsoft.EntityFrameworkCore.Metadata;
-using Microsoft.CodeAnalysis.FlowAnalysis.DataFlow;
-using System.Collections.Generic;
 using System.Data;
-using System.ComponentModel.DataAnnotations;
-using static System.Net.Mime.MediaTypeNames;
-using SendGen.Domain.OpaSuiteDomains.OpaSuiteTemplate;
+using SendGen.Web.Controllers.API;
 
 namespace SendGen.Web.Controllers;
 
@@ -36,18 +26,12 @@ public class AgendamentoController : Controller
 
     public async Task<ActionResult> Index()
     {
-        var canaisController = new CanaisController(_utilitiesApiRepository);
+        var canaisController = new CanalController(_utilitiesApiRepository);
+        var templateController = new TemplateController(_context, _templateRepository, _utilitiesApiRepository);
 
-        OpaSuiteTemplateListResponse templates = await _templateRepository.Get();
-               
+        List<TemplateGetData> templates = await templateController.templateGet(null);
 
-        canaisGetFilter filtroCanais = new canaisGetFilter
-        {
-            filter = new filterCanais { },
-            options = new options { }
-        };
-
-        List<CanaisGetData> canais = await canaisController.canaisGet(filtroCanais);
+        List<CanalGetData> canais = await canaisController.canalGet(null);
 
         List<Agendamento> agendamentos = _context.Agendamento.ToList();
 
@@ -97,7 +81,7 @@ public class AgendamentoController : Controller
 
                                 // await envioTemplate.Send(cliente.Celular, cliente.Nome, agendamento.TemplateID);
 
-                                await AtualizarTempoExecusao(DataAtual, agendamento.ID);
+                                await AtualizarTempoExecucao(DataAtual, agendamento.ID);
                             }
                         }
                         break;
@@ -113,7 +97,7 @@ public class AgendamentoController : Controller
                             //filtrarListaClientes(listaFiltros, agendamento.FiltroID)
                             //.ForEach(async cliente => await envioTemplate.Send(cliente.Celular, cliente.Nome, agendamento.TemplateID));
 
-                            await AtualizarTempoExecusao(DataAtual, agendamento.ID);
+                            await AtualizarTempoExecucao(DataAtual, agendamento.ID);
                         }                         
                         break;
                     default:
@@ -124,8 +108,7 @@ public class AgendamentoController : Controller
             Console.WriteLine("Verificação concluída");  
         }, null, TimeSpan.Zero, TimeSpan.FromSeconds(TempoChecagem));
     }
-
-    [HttpPost]
+    
     public async Task SalvarAgendamento(int filtroID, string templateID, string canalID, int intervaloExecucao, string tipo)
     {
         Agendamento agendamento = new Agendamento
@@ -137,14 +120,13 @@ public class AgendamentoController : Controller
             Tipo = tipo
         };
 
-        _context.Agendamento.Add(agendamento);
-        await _context.SaveChangesAsync();
+        //_context.Agendamento.Add(agendamento);
+        //await _context.SaveChangesAsync();
 
         Console.WriteLine("Agendamento Salvo");
     }
 
-    [HttpPut]
-    public async Task AtualizarTempoExecusao(DateTime data, int id)
+    public async Task AtualizarTempoExecucao(DateTime data, int id)
     {
         using (var context = new SendGenContexto())
         {
@@ -165,5 +147,4 @@ public class AgendamentoController : Controller
         
         return listaClientes.Where(cliente => cliente.Celular != null).ToList();
     }
-
 }

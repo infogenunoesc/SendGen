@@ -2,7 +2,6 @@
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Data.SqlClient;
 using Newtonsoft.Json;
-using SendGen.Domain.OpaSuiteDomains.DataResultModels;
 using SendGen.Domain.SendGenDomains.Data;
 using System.Net.Http.Headers;
 
@@ -11,9 +10,9 @@ namespace SendGen.Repository.SendGenRepositories
     //Classe contendo métodos genericos de uso de uma API Request 
     public class UtilitiesApiRepository : IUtilitiesApiRepository
     {
-        private string tokenOpaSuite = "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY1MmMxNzRmNzkwNjkyZmQ4YWYyY2E0ZSIsImlhdCI6MTY5NzM4ODM2N30.g81oPrxP-bP672kt8IGwRPmvFvWzvmMno1Csb8XMNi4";
-        private string baseUrlAPI = "https://demo2.opasuite.com.br/api/v1/";
-        string conexaoServer = "Server=DESKTOP-H95BSF0\\SQLEXPRESS; Database=SendGen; Integrated Security=True;TrustServerCertificate=True;";
+        private readonly string tokenOpaSuite = "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY1MmMxNzRmNzkwNjkyZmQ4YWYyY2E0ZSIsImlhdCI6MTY5NzM4ODM2N30.g81oPrxP-bP672kt8IGwRPmvFvWzvmMno1Csb8XMNi4";
+        private readonly string baseUrlAPI = "https://demo2.opasuite.com.br/api/v1/";
+        private readonly string conexaoServer = "Server=DESKTOP-H95BSF0\\SQLEXPRESS; Database=SendGen; Integrated Security=True;TrustServerCertificate=True;";
 
         // Enviar um get com filtro via JSON para a API do Opa Suite
         public async Task<IActionResult> requestGetJSON(string metodoAPI, string contentJSON)

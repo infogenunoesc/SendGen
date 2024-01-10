@@ -1,12 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace SendGen.Domain.OpaSuiteDomains.DataResultModels
+﻿namespace SendGen.Domain.OpaSuiteDomains.DataResultModels
 {
-    public class CanaisGetData
+    // Objeto canal da API do Opa Suite
+    public class CanalGetData
     {
         public string _id { get; set; }
         public string nome { get; set; }

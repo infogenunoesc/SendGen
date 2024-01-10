@@ -1,25 +1,8 @@
-﻿using Dapper;
-using Microsoft.AspNetCore.Mvc;
-using Microsoft.Data.SqlClient;
+﻿using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
-using Microsoft.Identity.Client;
-using Microsoft.IdentityModel.Tokens;
 using NuGet.Protocol;
 using SendGen.Domain.SendGenDomains.Data;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Configuration;
-using System.Diagnostics;
-using System.Text.Json;
-using static System.Net.Mime.MediaTypeNames;
-using SendGen.Domain.OpaSuiteDomains;
-using SendGen.Web.Models;
 using SendGen.Repository.SendGenRepositories;
-using SendGen.Web.Controllers.API;
-using SendGen.Domain.OpaSuiteDomains.Filtros;
-using SendGen.Domain.OpaSuiteDomains.DataResultModels;
-using Azure;
-using Newtonsoft.Json;
 
 namespace SendGen.Web.Controllers;
 

@@ -1,11 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace SendGen.Domain.OpaSuiteDomains.DataResultModels
+﻿namespace SendGen.Domain.OpaSuiteDomains.DataResultModels
 {
+    // Objeto template da API do Opa Suite
     public class TemplateGetData
     {
         public string _id { get; set; }

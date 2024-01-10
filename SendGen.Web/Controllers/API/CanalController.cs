@@ -8,55 +8,47 @@ namespace SendGen.Web.Controllers.API
 {
     // Controle dos Canais de Comunicação do Opa Suite
 
-    public class CanaisController : Controller
+    public class CanalController : Controller
     {
         private readonly IUtilitiesApiRepository _utilitiesApiRepository;
 
-        public CanaisController(IUtilitiesApiRepository utilitiesApiRepository)
+        public CanalController(IUtilitiesApiRepository utilitiesApiRepository)
         {
             _utilitiesApiRepository = utilitiesApiRepository;
         }
 
-        string metodoAPI = "canal-comunicacao";
+        private readonly string metodoAPI = "canal-comunicacao";
 
         // Método referente ao "Canais de Comunicação - Listar canais de comunicação" da API do Opa Suite
 
-        [HttpPost] //Usado como Post por causa da form de envio via filtro JSON de um "get" do Opa Suite
-        public async Task<List<CanaisGetData>> canaisGet(canaisGetFilter filtroCanaisForm)
+        // Retorna lista de canais 
+        public async Task<List<CanalGetData>> canalGet(canalGetFilter? filtroCanalForm)
         {
-            canaisGetFilter filtroCanais = new canaisGetFilter
+            if (filtroCanalForm == null)
             {
-                filter = new filterCanais
+                filtroCanalForm = new canalGetFilter
                 {
-                    nome = filtroCanaisForm.filter.nome,
-                    id_atendente = filtroCanaisForm.filter.id_atendente,
-                    status = filtroCanaisForm.filter.status,
-                    canal = filtroCanaisForm.filter.canal,
-                    integracao = filtroCanaisForm.filter.integracao
-                },
-                options = new options
-                {
-                    skip = filtroCanaisForm.options.skip,
-                    limit = filtroCanaisForm.options.limit
-                }
-            };
+                    filter = new filterCanais { },
+                    options = new options { }
+                };
+            }
 
             var settings = new JsonSerializerSettings
             {
                 NullValueHandling = NullValueHandling.Ignore
             };
 
-            string stringJSON = JsonConvert.SerializeObject(filtroCanais, settings);
+            string stringJSON = JsonConvert.SerializeObject(filtroCanalForm, settings);
 
             var retorno = await _utilitiesApiRepository.requestGetJSON(metodoAPI, stringJSON);
 
-            List<CanaisGetData> resposta = _utilitiesApiRepository.IActionResultToList<CanaisGetData>(retorno);
+            List<CanalGetData> resposta = _utilitiesApiRepository.IActionResultToList<CanalGetData>(retorno);
 
             return resposta;
         }
 
         // Método usado para chamar os outros gets da api dos canais
-        public async Task<List<CanaisGetData>> canaisGetID(string canalID, string metodo)
+        public async Task<List<CanalGetData>> canalGetID(string canalID, string metodo)
         {
             // Métodos válidos: CanalID, CanalTemplate e CanalTemplateLimite
 
@@ -82,7 +74,7 @@ namespace SendGen.Web.Controllers.API
 
             var retorno = await _utilitiesApiRepository.requestGetURL(metodoAPI, urlAPI);
 
-            List<CanaisGetData> resposta = _utilitiesApiRepository.IActionResultToList<CanaisGetData>(retorno);
+            List<CanalGetData> resposta = _utilitiesApiRepository.IActionResultToList<CanalGetData>(retorno);
 
             return resposta;
         }

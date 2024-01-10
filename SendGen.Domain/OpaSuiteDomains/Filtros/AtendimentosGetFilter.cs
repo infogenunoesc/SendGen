@@ -9,7 +9,6 @@ public class filterAtendimentos
     public string? dataFinalAbertura { get; set; }
     public string? dataInicialEncerramento { get; set; }
     public string? dataFinalEncerramento { get; set; }
-
 }
 
 public class atendimentosGetFilter

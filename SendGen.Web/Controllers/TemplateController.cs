@@ -1,8 +1,12 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
+using Newtonsoft.Json;
+using SendGen.Domain.OpaSuiteDomains.DataResultModels;
+using SendGen.Domain.OpaSuiteDomains.Filtros;
 using SendGen.Domain.SendGenDomains.Data;
 using SendGen.Repository.OpaSuiteRepositories;
+using SendGen.Repository.SendGenRepositories;
 
 namespace SendGen.Web.Controllers
 {
@@ -11,19 +15,23 @@ namespace SendGen.Web.Controllers
 		// Declaração de membros privados para o contexto do banco de dados e o repositório de templates
 		private readonly SendGenContexto contexto;
 		private readonly ITemplateRepository templateRepository;
-		
-		// Construtor que realiza a injeção de dependências para o contexto e o repositório
-		public TemplateController(
+        private readonly IUtilitiesApiRepository utilitiesApiRepository;
+
+        // Construtor que realiza a injeção de dependências para o contexto e o repositório
+        public TemplateController(
 
 			SendGenContexto contexto,
 
-			ITemplateRepository templateRepository
+			ITemplateRepository templateRepository,
+
+			IUtilitiesApiRepository utilitiesApiRepository
 
 			)
 		{
 			this.contexto = contexto;
 			this.templateRepository = templateRepository;
-		}
+            this.utilitiesApiRepository = utilitiesApiRepository;
+        }
 
 		// Ação que retorna a view para selecionar um template
 		public async Task<IActionResult> Selecionar(string clienteIds)
@@ -75,5 +83,44 @@ namespace SendGen.Web.Controllers
 			});
 		}
 
-	}
+        public async Task<List<TemplateGetData>> templateGet(templateGetFilter? filtroTemplate) //Recebe o filtro e retorna uma lista, caso existir algum elemento
+        {
+            if (filtroTemplate == null)
+            {
+
+                filtroTemplate = new templateGetFilter
+                {
+                    filter = new filterTemplate { },
+                    options = new options { }
+                };
+            }
+
+            var settings = new JsonSerializerSettings //Tirar espaços e ignorar os nulls do json (filtro) enviado
+            {
+                NullValueHandling = NullValueHandling.Ignore
+            };
+
+            string stringJSON = JsonConvert.SerializeObject(filtroTemplate, settings);
+
+            Console.WriteLine(stringJSON);
+
+            var retorno = await utilitiesApiRepository.requestGetJSON("template", stringJSON);
+
+            List<TemplateGetData> resposta = utilitiesApiRepository.IActionResultToList<TemplateGetData>(retorno);
+
+            return resposta;
+        }
+
+        public async Task<IActionResult> templateGetID(int templateID)
+        {
+            if (templateID == null)
+            {
+                return BadRequest("É necessário informar o ID de uma template.");
+            }
+
+            var retorno = await utilitiesApiRepository.requestGetURL("template", templateID.ToString());
+
+            return retorno;
+        }
+    }
 }

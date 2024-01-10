@@ -10,7 +10,7 @@ public class filterCanais
     public string? integracao { get; set; }
 }
 
-public class canaisGetFilter
+public class canalGetFilter
 {
     public filterCanais? filter { get; set; }
     public options? options { get; set; }
