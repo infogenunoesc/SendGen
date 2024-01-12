@@ -75,7 +75,7 @@ Somos uma empresa de tecnologia, focada no desenvolvimento de software de gestã
 ```
 7. Pronto. Compile e execute a aplicação. 
 
-## Configurando Importação de Database 💾
+## Configurando Importação de Database (opcional) 💾
 
 1. Mude a variavél "connectionString" do método "ObterClientes" do arquivo TransacionadoresRepository.cs em SendGen.Repository/SaborColonialRepositories/ para a conexão com a database desejada.
 
@@ -88,7 +88,7 @@ Somos uma empresa de tecnologia, focada no desenvolvimento de software de gestã
 - Cadastro de usuário/login
 - CRUD clientes
 - Envio de mensagem via template Opa Suite
-- Importação de Database (usado o modelo providenciado)
+- Importação de Database
 
 ## Screenshots 🖼️
 
