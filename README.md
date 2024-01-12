@@ -92,5 +92,6 @@ Somos uma empresa de tecnologia, focada no desenvolvimento de software de gestã
 
 ## Screenshots 🖼️
 
-![App Screenshot](https://via.placeholder.com/468x300?text=App+Screenshot+Here)
+![Login](https://github.com/infogenunoesc/SendGen/assets/124840306/b8976e1f-a316-4361-855a-8907ff7a40a7)
+![Clientes](https://github.com/infogenunoesc/SendGen/assets/124840306/9e092275-5fbe-49d6-b61d-3bce265b5f51)
 
