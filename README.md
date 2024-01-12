@@ -23,7 +23,7 @@ Somos uma empresa de tecnologia, focada no desenvolvimento de software de gestã
 - [@kikovander](https://www.github.com/kikovander)
 - [@ionar](https://www.github.com/ionar)
 - [@morganeafb](https://github.com/morganeafb)
--
+-[@costaangelo](https://github.com/costaangelo)
 
 ## Stack utilizadas 💻
 
