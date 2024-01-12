@@ -1,6 +1,4 @@
-
 ![Logo](https://i.ibb.co/y61VB2b/Send-Gen-logo.png)
-
 
 ## Desafio do projeto 📋📌
 
@@ -16,14 +14,12 @@ https://infogen.com.br/
 Somos uma empresa de tecnologia, focada no desenvolvimento de software de gestão direcionado ao seguimento do agronegócio.
 
 
-
-
 ## Grupo 7 - Alunos 👩‍💻👨‍💻
 
 - [@kikovander](https://www.github.com/kikovander)
 - [@ionar](https://www.github.com/ionar)
 - [@morganeafb](https://github.com/morganeafb)
--
+- [@costaangelo](https://github.com/costaangelo) 
 
 ## Stack utilizadas 💻
 
@@ -77,11 +73,11 @@ Somos uma empresa de tecnologia, focada no desenvolvimento de software de gestã
 
 ## Configurando Importação de Database (opcional) 💾
 
-1. Mude a variavél "connectionString" do método "ObterClientes" do arquivo TransacionadoresRepository.cs em SendGen.Repository/SaborColonialRepositories/ para a conexão com a database desejada.
+1. Mude a variável "connectionString" do método "ObterClientes" do arquivo TransacionadoresRepository.cs em SendGen.Repository/SaborColonialRepositories/ para a conexão com a database desejada.
 
-2. Acesse a página "ObterClientes/Processar" com o programa compilado para a importação ser completada. 
+2. Verifique caso a condição sendo usada para formar a lista em "List<Transacionadores> lista" está adequada para sua aplicação (a database deverá conter colunas com os mesmos nomes que estão na condição para o programa funcionar corretamente).
 
-3. Tenha em mente que apenas funcionará sem a necessidade de mudanças mais severas caso a database seguir o modelo providenciado de exemplo!
+3. Acesse a página "ObterClientes/Processar" com o programa compilado para a importação ser feita.
 
 ## Funcionalidades 🛠️
 
