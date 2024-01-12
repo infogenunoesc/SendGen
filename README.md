@@ -75,7 +75,7 @@ Somos uma empresa de tecnologia, focada no desenvolvimento de software de gestã
 
 1. Mude a variável "connectionString" do método "ObterClientes" do arquivo TransacionadoresRepository.cs em SendGen.Repository/SaborColonialRepositories/ para a conexão com a database desejada.
 
-2. Verifique caso a condição sendo usada para formar a lista em "List<Transacionadores> lista" está adequada para sua aplicação (a database deverá conter colunas com os mesmos nomes que estão na condição para o programa funcionar corretamente).
+2. Verifique caso a condição sendo usada para formar a lista está adequada para sua aplicação (a database deverá conter colunas com os mesmos nomes que estão na condição para o programa funcionar corretamente).
 
 3. Acesse a página "ObterClientes/Processar" com o programa compilado para a importação ser feita.
 
