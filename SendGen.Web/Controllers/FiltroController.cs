@@ -8,16 +8,14 @@ namespace SendGen.Web.Controllers;
 
 public class FiltroController : Controller
 {
-	string conexaoServer = "Server=DESKTOP-H95BSF0\\SQLEXPRESS; Database=SendGen; Integrated Security=True;TrustServerCertificate=True;";
-
 	private readonly SendGenContexto _context;
-    private readonly IUtilitiesApiRepository _utilitiesApiRepository;
+	private readonly IUtilitiesApiRepository _utilitiesApiRepository;
 
 	public FiltroController(SendGenContexto context, IUtilitiesApiRepository utilitiesApiRepository)
 	{
 		_context = context;
-        _utilitiesApiRepository = utilitiesApiRepository;
-    }
+		_utilitiesApiRepository = utilitiesApiRepository;
+	}
 
 	public async Task<IActionResult> Create(string SearchString, bool enviado = false)
 	{
@@ -26,6 +24,8 @@ public class FiltroController : Controller
 		if (enviado == true)
 		{
 			listaClientes = _utilitiesApiRepository.BuscaEntidadeDB<Cliente>(SearchString);
+			await Salvar(SearchString);
+			ViewData["Salvo"] = true;
 		}
 
 		if (listaClientes == null)
@@ -41,7 +41,7 @@ public class FiltroController : Controller
 
 		enviado = false;
 
-		Console.WriteLine("Clientes: " + listaClientes);
+		Console.WriteLine("Clientes: " + listaClientes.ToJson());
 
 		return View(listaClientes);
 	}
@@ -62,13 +62,10 @@ public class FiltroController : Controller
 
 	public async Task<ActionResult> Index()
 	{
-		Console.WriteLine("Filtros: " + _context.FiltroDB.ToJson());
-
 		List<FiltroDB> filtros = _context.FiltroDB.ToList();
+
+		Console.WriteLine("Filtros: " + _context.FiltroDB.ToJson());
 
 		return View(filtros);
 	}
-
-
-
 }

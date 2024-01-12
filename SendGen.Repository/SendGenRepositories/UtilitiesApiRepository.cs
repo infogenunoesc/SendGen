@@ -12,7 +12,7 @@ namespace SendGen.Repository.SendGenRepositories
     {
         private readonly string tokenOpaSuite = "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY1MmMxNzRmNzkwNjkyZmQ4YWYyY2E0ZSIsImlhdCI6MTY5NzM4ODM2N30.g81oPrxP-bP672kt8IGwRPmvFvWzvmMno1Csb8XMNi4";
         private readonly string baseUrlAPI = "https://demo2.opasuite.com.br/api/v1/";
-        private readonly string conexaoServer = "Server=DESKTOP-H95BSF0\\SQLEXPRESS; Database=SendGen; Integrated Security=True;TrustServerCertificate=True;";
+        private readonly string conexaoServer = "Server=localhost; Database=SendGen; Integrated Security=True;TrustServerCertificate=True;";
 
         // Enviar um get com filtro via JSON para a API do Opa Suite
         public async Task<IActionResult> requestGetJSON(string metodoAPI, string contentJSON)
@@ -100,7 +100,6 @@ namespace SendGen.Repository.SendGenRepositories
 
                 lista = con
                     .Query<T>(@condicao).ToList();
-
             }
 
             return lista;

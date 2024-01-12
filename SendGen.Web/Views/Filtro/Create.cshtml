@@ -1,24 +1,28 @@
 ﻿@model IEnumerable<SendGen.Domain.SendGenDomains.Data.Cliente>
 
 @{
-    ViewData["Title"] = "Criar Filtro";
+	ViewData["Title"] = "Criar Filtro";
 }
 
-<h3>Select * from cliente</h3>
+<div class="container">
+	<form method="get" id="formPesquisar">
+		<div class="form-row">
+			<input type="hidden" id="enviado" name="enviado" value="true" />
+			<div class="col-md-4 mb-3">
+				<label for="SearchString">Filtro:</label>
+			</div>
+			<div class="col-md-4 mb-3">
+				@Html.TextBox("SearchString", ViewBag.CurrentFilter as string, new { @class = "form-control", placeholder = "Digite para salvar um novo filtro", required = true })
+			</div>
+			<div class="col-md-4 mb-3">
+				<button type="submit" value="true" onclick="formPesquisar.submit()" class="btn btn-success" ) />Salvar</button>
+			</div>
+		</div>
+	</form>
+</div>
 
-<form method="get" id="formPesquisar">
-	<input type="hidden" name="enviado" value="true" />
-	Find by name: @Html.TextBox("SearchString", ViewBag.CurrentFilter as string)
-
-	<button type="submit" value="true" onclick="formPesquisar.submit()" ) />Pesquisar</button>
-</form>
-
-<form method="post" id="formCondicao" asp-action="Salvar">
-	<input type="hidden" id="condicao" name="condicao" value="@ViewBag.CurrentFilter" />
-	<button type="submit" id="salvarCondicao" onlick="formCondicao.submit()" value="true" />Salvar</button>
-</form>
-
-@if (ViewBag.Salvo == true) {
+@if (ViewBag.Salvo == true)
+{
 	<p>Filtro salvo com sucesso!</p>
 }
 
@@ -49,4 +53,3 @@
 	</tbody>
 </table>
 
-           

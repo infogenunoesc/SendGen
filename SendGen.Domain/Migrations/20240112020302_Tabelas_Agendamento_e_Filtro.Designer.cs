@@ -3,6 +3,7 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using SendGen.Domain.SendGenDomains.Data;
 
@@ -11,9 +12,11 @@ using SendGen.Domain.SendGenDomains.Data;
 namespace SendGen.Domain.Migrations
 {
     [DbContext(typeof(SendGenContexto))]
-    partial class SendGenContextoModelSnapshot : ModelSnapshot
+    [Migration("20240112020302_Tabelas_Agendamento_e_Filtro")]
+    partial class Tabelas_Agendamento_e_Filtro
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
