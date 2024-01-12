@@ -21,8 +21,8 @@ Somos uma empresa de tecnologia, focada no desenvolvimento de software de gestã
 ## Grupo 7 - Alunos 👩‍💻👨‍💻
 
 - [@kikovander](https://www.github.com/kikovander)
--
--
+- [@ionar](https://www.github.com/ionar)
+- [@morganeafb](https://github.com/morganeafb)
 -
 
 ## Stack utilizadas 💻
@@ -69,19 +69,27 @@ Somos uma empresa de tecnologia, focada no desenvolvimento de software de gestã
 6. Execute o comando no terminal do Visual Studio (Um de cada vez, na ordem abaixo)
 
 ```bash
-  Add-Migration descricao_da_acao
-  Update-Database
+  Update-Database -Context ApplicationDbContext
+  Update-Database -Context SendGenContexto
+
 ```
 7. Pronto. Compile e execute a aplicação. 
 
+## Configurando Importação de Database (opcional) 💾
+
+1. Mude a variavél "connectionString" do método "ObterClientes" do arquivo TransacionadoresRepository.cs em SendGen.Repository/SaborColonialRepositories/ para a conexão com a database desejada.
+
+2. Acesse a página "ObterClientes/Processar" com o programa compilado para a importação ser completada. 
+
+3. Tenha em mente que apenas funcionará sem a necessidade de mudanças mais severas caso a database seguir o modelo providenciado de exemplo!
 
 ## Funcionalidades 🛠️
 
 - Cadastro de usuário/login
 - CRUD clientes
 - Envio de mensagem via template Opa Suite
-
-
+- Importação de Database
+- Agendamento de Mensagens
 
 ## Screenshots 🖼️
 
