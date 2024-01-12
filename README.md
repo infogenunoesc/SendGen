@@ -69,8 +69,9 @@ Somos uma empresa de tecnologia, focada no desenvolvimento de software de gestã
 6. Execute o comando no terminal do Visual Studio (Um de cada vez, na ordem abaixo)
 
 ```bash
-  Add-Migration descricao_da_acao
-  Update-Database
+  Update-Database -Context ApplicationDbContext
+  Update-Database -Context SendGenContexto
+
 ```
 7. Pronto. Compile e execute a aplicação. 
 
@@ -80,7 +81,6 @@ Somos uma empresa de tecnologia, focada no desenvolvimento de software de gestã
 - Cadastro de usuário/login
 - CRUD clientes
 - Envio de mensagem via template Opa Suite
-
 
 
 ## Screenshots 🖼️
